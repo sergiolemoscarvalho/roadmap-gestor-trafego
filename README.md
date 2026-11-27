@@ -1,38 +1,26 @@
-# Roadmap Gestor de Tráfego 2026 — NeexFlow
+# Curso de Gestão de Tráfego Pago 2026 — NeexFlow
 
-Curso de gestão de tráfego em 3 níveis (Fundamentos, Intermediário, Avançado), com fontes oficiais conferidas em 23/11/2026.
+Curso em 15 unidades e 3 níveis (Fundamentos, Intermediário, Avançado). Cada unidade tem teoria, exemplo com números e prática real. Inclui glossário com busca, simulado comentado (38 questões) e 43 referências numeradas, conferidas em 26/11/2026.
 
-É um site estático de arquivo único (`index.html`). Não precisa de build nem de dependências: só usa Google Fonts.
+Site estático de arquivo único (`index.html`), sem build. Progresso, tema e respostas do simulado ficam no `localStorage` do navegador.
 
 ## Publicar no GitHub Pages
 
+O repositório precisa ser **público** (no plano gratuito, o Pages não funciona com repositório privado).
+
 ```bash
-git init
+git init -b main
 git add .
-git commit -m "Roadmap Gestor de Tráfego 2026"
-git branch -M main
-git remote add origin git@github.com:sergiolemoscarvalho/roadmap-gestor-trafego.git
+git commit -m "Curso de Gestão de Tráfego 2026 v1.0"
+git remote add origin https://github.com/sergiolemoscarvalho/curso-gestao-trafego.git
 git push -u origin main
 ```
 
-Depois, no GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch → `main` / `(root)` → Save**.
+Depois: Settings → Pages → Deploy from a branch → `main` / `(root)` → Save.
 
-O site fica em `https://sergiolemoscarvalho.github.io/roadmap-gestor-trafego/`.
+## Atualizar o conteúdo
 
-### Domínio próprio (opcional)
-
-Para usar, por exemplo, `trafego.neexflow.com.br`:
-
-1. Crie um arquivo `CNAME` na raiz com o conteúdo `trafego.neexflow.com.br`.
-2. No DNS, crie um registro CNAME `trafego` apontando para `sergiolemoscarvalho.github.io`.
-3. Em Settings → Pages, informe o domínio e marque **Enforce HTTPS**.
-
-## Identidade visual
-
-- Fundo `#050a1e`: cor de tema oficial do neexflow.com.br.
-- Logo: carregado de `https://www.neexflow.com.br/logobg-b.svg`. Se preferir não depender do site principal, copie o SVG para `assets/logo.svg` e troque o `src` da tag `<img>`.
-- **Cor de destaque (`--acc`) é provisória** (`#58a6ff`). Troque pelo hex oficial da marca no bloco `:root` do CSS.
-
-## Manutenção do conteúdo
-
-Plataformas de anúncio mudam rápido. Reconfira as fontes da aba "Fontes" pelo menos uma vez por trimestre e atualize a data "Fontes conferidas em".
+1. Edite `index.html`.
+2. Acrescente a versão no array `VERSIONS` (no script, perto do início) — ela aparece no banner de novidades e no histórico.
+3. Registre a mudança no `CHANGELOG.md`.
+4. Reconfira as fontes da seção Referências pelo menos a cada trimestre e atualize a data "Fontes conferidas em".

@@ -3,441 +3,1188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Roadmap Gestor de Tráfego 2026 — Curso em 3 Níveis | NeexFlow</title>
-<meta name="description" content="Curso de gestão de tráfego em 3 níveis, com fontes oficiais conferidas. Um projeto NeexFlow.">
+<title>Curso de Gestão de Tráfego 2026 — do zero à operação | NeexFlow</title>
+<meta name="description" content="Curso completo de tráfego pago em 3 níveis: teoria, exemplos e prática real, com fontes oficiais conferidas. Um projeto NeexFlow.">
 <meta name="theme-color" content="#050a1e">
-<meta property="og:title" content="Roadmap Gestor de Tráfego 2026 | NeexFlow">
-<meta property="og:description" content="Do primeiro anúncio à mensuração avançada, em 3 níveis, com fontes oficiais.">
-<meta property="og:image" content="https://www.neexflow.com.br/logobg-b.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* Identidade NeexFlow
-   --bg = #050a1e: cor de tema oficial do neexflow.com.br (meta theme-color).
-   --acc: PROVISÓRIA. Troque pelo hex de destaque oficial da marca. */
 :root{
   --bg:#050a1e;--panel:#0b1330;--panel2:#111b3d;--line:#1e2a52;--txt:#eef2ff;--mut:#9aa6c8;
-  --n1:#3fb950;--n2:#f0b429;--n3:#ff6b6b;--acc:#58a6ff;--r:14px;
+  --acc:#58a6ff;--n1:#3fb950;--n2:#f0b429;--n3:#ff6b6b;--ok:#3fb950;--bad:#ff6b6b;--r:12px;--side:290px;
 }
-.brand{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0 4px}
-.brand a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--txt);font:700 18px "Space Grotesk",sans-serif}
-.brand img{height:34px;width:auto}
-.brand .cta{font:600 13px Inter,sans-serif;color:var(--bg);background:var(--acc);padding:8px 14px;border-radius:10px}
+html[data-theme="light"]{
+  --bg:#f6f7fb;--panel:#ffffff;--panel2:#eef1f7;--line:#d9deea;--txt:#141a2e;--mut:#5a6480;
+  --acc:#1f6feb;--n1:#1a7f37;--n2:#9a6700;--n3:#cf222e;--ok:#1a7f37;--bad:#cf222e;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 Inter,system-ui,sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.7 Inter,system-ui,sans-serif}
 a{color:var(--acc)}
-h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.2;margin:0}
-.wrap{max-width:980px;margin:0 auto;padding:20px 16px 60px}
-header.hero{padding:28px 0 18px}
-.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);font-weight:600}
-.hero h1{font-size:clamp(28px,6vw,44px);margin:8px 0 10px}
-.hero p{color:var(--mut);max-width:680px;margin:0}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.badge{font-size:12px;padding:5px 10px;border:1px solid var(--line);border-radius:99px;color:var(--mut);background:var(--panel)}
+h1,h2,h3,h4{font-family:"Space Grotesk",sans-serif;line-height:1.25}
+h2{font-size:clamp(22px,4vw,30px);margin:0}
+h3{font-size:20px;margin:28px 0 8px}
+h4{font-size:16px;margin:18px 0 6px}
+p{margin:10px 0}
+code{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.9em}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow:auto;font-size:13.5px;line-height:1.5}
+/* layout */
+.layout{display:grid;grid-template-columns:var(--side) 1fr;min-height:100vh}
+aside.side{position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid var(--line);background:var(--panel);padding:16px 14px 30px}
+main{min-width:0;padding:0 clamp(16px,4vw,48px) 80px;max-width:980px}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.brand img{height:28px}
+.brand b{font:700 16px "Space Grotesk",sans-serif}
+.side input[type=search]{width:100%;padding:9px 11px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--txt);font:inherit;font-size:14px}
+.side .prog{margin:12px 0 4px;font-size:13px;color:var(--mut)}
+.side .bar{height:6px;border-radius:9px;background:var(--panel2);overflow:hidden}
+.side .bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .3s}
+.toc{list-style:none;margin:14px 0 0;padding:0;font-size:14px}
+.toc .lv{margin:16px 0 4px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:700}
+.toc a{display:flex;gap:8px;align-items:baseline;color:var(--txt);text-decoration:none;padding:5px 8px;border-radius:8px}
+.toc a:hover,.toc a.on{background:var(--panel2)}
+.toc a .n{font-size:11px;color:var(--mut);min-width:20px}
+.toc a.done::after{content:"✓";margin-left:auto;color:var(--ok);font-weight:700}
+.toc a.hide{display:none}
+.side .tools{display:flex;gap:6px;margin-top:16px}
+.btn{border:1px solid var(--line);background:var(--panel2);color:var(--txt);padding:8px 12px;border-radius:9px;font:600 13px Inter,sans-serif;cursor:pointer}
+.btn:hover{border-color:var(--acc)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn.ghost{background:transparent}
+.menu-t{display:none}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  aside.side{position:fixed;inset:0 25% 0 0;max-width:340px;z-index:30;transform:translateX(-105%);transition:transform .25s;height:100vh}
+  aside.side.open{transform:none;box-shadow:0 0 0 100vmax rgba(0,0,0,.45)}
+  .menu-t{display:inline-flex;position:sticky;top:10px;z-index:20;margin-top:10px}
+}
+/* hero */
+.hero{padding:34px 0 10px}
+.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);font-weight:700}
+.hero h1{font-size:clamp(28px,5.5vw,44px);margin:6px 0 10px}
+.hero p{color:var(--mut);max-width:720px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.badge{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:99px;color:var(--mut);background:var(--panel)}
 .badge b{color:var(--txt)}
-nav.tabs{position:sticky;top:0;z-index:5;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:20px}
-nav.tabs button{flex:0 0 auto;border:1px solid var(--line);background:var(--panel);color:var(--txt);padding:9px 14px;border-radius:10px;font:600 14px Inter,sans-serif;cursor:pointer}
-nav.tabs button[aria-selected="true"]{background:var(--txt);color:var(--bg);border-color:var(--txt)}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
-section.view{display:none}
-section.view.on{display:block}
-.levelhead{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end;margin-bottom:16px}
-.levelhead h2{font-size:clamp(22px,4.5vw,30px)}
-.levelhead .meta{color:var(--mut);font-size:14px;margin-top:6px}
-.progress{min-width:120px;text-align:right;font-size:13px;color:var(--mut)}
-.bar{height:6px;background:var(--panel2);border-radius:9px;overflow:hidden;margin-top:6px}
-.bar i{display:block;height:100%;width:0;transition:width .3s}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 14px;margin-bottom:12px}
-.card h3{font-size:17px;margin-bottom:8px;display:flex;gap:10px;align-items:baseline}
-.card h3 .num{font-size:12px;color:var(--mut);font-family:Inter;font-weight:600}
-.card p{margin:6px 0}
-.card ul{margin:6px 0 4px;padding-left:0;list-style:none}
-.card li{margin:6px 0;display:flex;gap:10px;align-items:flex-start}
-.card li input{margin-top:5px;accent-color:var(--acc);width:16px;height:16px;flex:0 0 auto}
-.card li label{cursor:pointer}
-.src{font-size:11px;font-weight:600;color:var(--acc);text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:0 5px;margin-left:3px;white-space:nowrap}
-.note{font-size:13px;color:var(--mut);border-left:3px solid var(--line);padding:4px 0 4px 10px;margin-top:10px}
-.fact{background:var(--panel2);border-radius:10px;padding:10px 12px;margin:10px 0 4px;font-size:14px}
-.fact b{color:var(--txt)}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.proj{border:1px dashed var(--line);background:transparent}
-.tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;background:var(--panel2);color:var(--mut);margin-right:4px}
-.legend{font-size:13px;color:var(--mut);margin:0 0 16px}
-.timeline{position:relative;padding-left:20px;border-left:2px solid var(--line);margin:8px 0 0 6px}
-.tl{position:relative;margin:0 0 16px}
-.tl::before{content:"";position:absolute;left:-27px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--acc);border:2px solid var(--bg)}
-.tl time{font-size:12px;color:var(--mut);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-.tl p{margin:2px 0 0}
-ol.sources{padding-left:22px}
-ol.sources li{margin:0 0 10px}
-ol.sources li:target{background:var(--panel2);border-radius:8px;outline:2px solid var(--acc);outline-offset:4px}
-ol.sources small{color:var(--mut);display:block}
-.callout{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:var(--r);padding:14px 16px;margin:0 0 18px}
-footer{margin-top:36px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
-.reset{background:none;border:1px solid var(--line);color:var(--mut);border-radius:8px;padding:6px 10px;cursor:pointer;font:500 13px Inter}
+.news{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:var(--r);padding:12px 14px;margin:18px 0}
+.news p{margin:2px 0;font-size:14px}
+.news button{margin-left:auto;flex:0 0 auto}
+/* units */
+section.unit{border-top:1px solid var(--line);padding:34px 0 10px}
+.unit-head{display:flex;gap:14px;align-items:center;margin-bottom:6px}
+.unit-head .num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font:700 16px "Space Grotesk",sans-serif;background:var(--panel2);border:1px solid var(--line)}
+.lvtag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;margin-bottom:4px}
+.l1{color:var(--n1);border:1px solid var(--n1)} .l2{color:var(--n2);border:1px solid var(--n2)} .l3{color:var(--n3);border:1px solid var(--n3)}
+.goal{color:var(--mut);font-size:15px;margin:4px 0 14px}
+.block{border-radius:var(--r);padding:14px 16px;margin:16px 0;border:1px solid var(--line);background:var(--panel)}
+.block .k{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.ex{border-left:4px solid var(--n2)} .ex .k{color:var(--n2)}
+.pr{border-left:4px solid var(--n1)} .pr .k{color:var(--n1)}
+.warn{border-left:4px solid var(--n3)} .warn .k{color:var(--n3)}
+.tip{border-left:4px solid var(--acc)} .tip .k{color:var(--acc)}
+.pr ol,.pr ul{padding-left:20px;margin:6px 0} .pr li{margin:6px 0}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel2);font-weight:600}
+.src{font-size:11px;font-weight:700;color:var(--acc);text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:0 5px;margin-left:2px;white-space:nowrap;vertical-align:1px}
+.mark{margin-top:18px}
+.mark.done{background:var(--ok);border-color:var(--ok);color:#fff}
+.formula{font-family:ui-monospace,Consolas,monospace;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 12px;display:block;margin:8px 0;font-size:14px}
+mark.hl{background:rgba(255,214,10,.35);color:inherit;border-radius:3px}
+/* glossary */
+.gtools,.qtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.gtools input,.qtools select{padding:8px 10px;border-radius:9px;border:1px solid var(--line);background:var(--panel);color:var(--txt);font:inherit;font-size:14px}
+.gtools input{flex:1 1 220px}
+.gtabs button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.gcount,.score{font-size:13px;color:var(--mut)}
+dl.gl{margin:8px 0}
+dl.gl div{border-bottom:1px solid var(--line);padding:10px 0}
+dl.gl dt{font-weight:700}
+dl.gl dt small{font-weight:600;color:var(--mut);font-size:11px;margin-left:6px;text-transform:uppercase;letter-spacing:.06em}
+dl.gl dd{margin:2px 0 0;color:var(--txt)}
+/* quiz */
+.q{border:1px solid var(--line);background:var(--panel);border-radius:var(--r);padding:14px 16px;margin:12px 0}
+.q .qh{font-size:12px;color:var(--mut);margin-bottom:4px}
+.q p.st{margin:0 0 8px;font-weight:600}
+.q label{display:flex;gap:10px;align-items:flex-start;padding:7px 9px;border-radius:8px;cursor:pointer;border:1px solid transparent}
+.q label:hover{background:var(--panel2)}
+.q input{margin-top:6px;accent-color:var(--acc)}
+.q.checked label.right{border-color:var(--ok);background:rgba(63,185,80,.12)}
+.q.checked label.wrong{border-color:var(--bad);background:rgba(255,107,107,.12)}
+.q .why{display:none;margin-top:8px;font-size:14px;border-top:1px dashed var(--line);padding-top:8px}
+.q.checked .why{display:block}
+.q.hide{display:none}
+ol.refs{padding-left:22px;font-size:14.5px} ol.refs li{margin:0 0 8px} ol.refs small{color:var(--mut)}
+ol.refs li.flash{outline:2px solid var(--acc);outline-offset:4px;border-radius:6px}
+.ver{border:1px solid var(--line);border-radius:var(--r);padding:12px 16px;background:var(--panel);margin:10px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;padding-top:16px;color:var(--mut);font-size:13px}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="layout">
+<aside class="side" id="side">
+  <div class="brand">
+    <img src="https://www.neexflow.com.br/logobg-b.svg" alt="NeexFlow" onerror="this.remove()">
+    <b>Gestão de Tráfego 2026</b>
+  </div>
+  <input type="search" id="tocSearch" placeholder="Buscar no curso…" aria-label="Buscar no curso">
+  <div class="prog"><span id="progTxt">0 de 15 unidades estudadas</span><div class="bar"><i id="progBar"></i></div></div>
+  <ul class="toc" id="toc">
+    <li class="lv">Começo</li>
+    <li><a href="#comece"><span class="n">→</span>Como usar este curso</a></li>
+    <li class="lv" style="color:var(--n1)">Nível 1 · Fundamentos</li>
+    <li><a href="#u01" data-u="u01"><span class="n">01</span>O trabalho e o funil</a></li>
+    <li><a href="#u02" data-u="u02"><span class="n">02</span>A matemática do tráfego</a></li>
+    <li><a href="#u03" data-u="u03"><span class="n">03</span>Como os leilões funcionam</a></li>
+    <li><a href="#u04" data-u="u04"><span class="n">04</span>Meta Ads: estrutura</a></li>
+    <li><a href="#u05" data-u="u05"><span class="n">05</span>Google Ads: Pesquisa</a></li>
+    <li><a href="#u06" data-u="u06"><span class="n">06</span>Mensuração básica</a></li>
+    <li><a href="#u07" data-u="u07"><span class="n">07</span>LGPD e consentimento</a></li>
+    <li class="lv" style="color:var(--n2)">Nível 2 · Intermediário</li>
+    <li><a href="#u08" data-u="u08"><span class="n">08</span>Meta: Advantage+ e criativo</a></li>
+    <li><a href="#u09" data-u="u09"><span class="n">09</span>PMax e Demand Gen</a></li>
+    <li><a href="#u10" data-u="u10"><span class="n">10</span>CAPI e conversões otimizadas</a></li>
+    <li><a href="#u11" data-u="u11"><span class="n">11</span>TikTok Ads</a></li>
+    <li><a href="#u12" data-u="u12"><span class="n">12</span>Testes e relatórios</a></li>
+    <li class="lv" style="color:var(--n3)">Nível 3 · Avançado</li>
+    <li><a href="#u13" data-u="u13"><span class="n">13</span>Server-side e dados próprios</a></li>
+    <li><a href="#u14" data-u="u14"><span class="n">14</span>Incrementalidade e MMM</a></li>
+    <li><a href="#u15" data-u="u15"><span class="n">15</span>Operação profissional</a></li>
+    <li class="lv">Apoio</li>
+    <li><a href="#glossario"><span class="n">G</span>Glossário</a></li>
+    <li><a href="#simulado"><span class="n">Q</span>Simulado</a></li>
+    <li><a href="#referencias"><span class="n">R</span>Referências</a></li>
+    <li><a href="#versoes"><span class="n">V</span>Histórico de versões</a></li>
+  </ul>
+  <div class="tools">
+    <button class="btn" id="themeBtn" type="button">☀︎ Tema claro</button>
+    <button class="btn ghost" id="resetProg" type="button">Zerar progresso</button>
+  </div>
+</aside>
 
-<div class="brand">
-  <a href="https://neexflow.com.br" aria-label="NeexFlow">
-    <img src="https://www.neexflow.com.br/logobg-b.svg" alt="NeexFlow" onerror="this.replaceWith(document.createTextNode('NeexFlow'))">
-  </a>
-  <a class="cta" href="https://neexflow.com.br">Fale com a NeexFlow</a>
-</div>
+<main>
+<button class="btn menu-t" id="menuBtn" type="button" aria-controls="side">☰ Sumário</button>
 
-<header class="hero">
-  <div class="kicker">Curso · Projeto Web</div>
-  <h1>Roadmap do Gestor de Tráfego 2026</h1>
-  <p>Do primeiro anúncio à mensuração avançada, em 3 níveis. Cada afirmação sobre plataformas, regras ou certificações traz um link para a fonte oficial ou primária. Marque os tópicos à medida que avança; o progresso fica salvo neste navegador.</p>
+<header class="hero" id="comece">
+  <div class="kicker">Curso completo · NeexFlow</div>
+  <h1>Gestão de Tráfego Pago 2026: do zero à operação</h1>
+  <p>15 unidades em 3 níveis. Cada unidade tem <b>teoria</b>, <b>exemplo</b> com números e uma <b>prática real</b> para você fazer nas ferramentas de verdade. No fim: glossário com busca, simulado comentado e todas as referências.</p>
   <div class="badges">
-    <span class="badge">Fontes conferidas em <b>23/11/2026</b></span>
-    <span class="badge">Plataformas: <b>Meta · Google · TikTok</b></span>
-    <span class="badge">Contexto legal: <b>LGPD (Brasil)</b></span>
+    <span class="badge">Fontes conferidas em <b>26/11/2026</b></span>
+    <span class="badge">Meta · Google · TikTok · LGPD</span>
+    <span class="badge">Versão <b>1.0</b></span>
+  </div>
+  <div class="news" id="news" hidden>
+    <div><p><b>Novidades da versão <span id="newsVer"></span></b></p><p id="newsTxt"></p></div>
+    <button class="btn ghost" id="newsClose" type="button">Entendi</button>
+  </div>
+
+  <div class="block tip">
+    <span class="k">Como usar</span>
+    <p><b>Regra de confiança.</b> Tudo o que é fato de plataforma, lei ou número oficial tem um marcador como <a class="src" href="#ref-1">[1]</a>, que leva à fonte. Quando a fonte é secundária (um especialista ou veículo que cita a plataforma), isso está escrito na lista de referências. O que não tem marcador é método de trabalho: a forma de organizar, os exemplos numéricos (fictícios, feitos para ensinar a conta) e os exercícios.</p>
+    <p><b>Ritmo sugerido.</b> Uma unidade por semana, fazendo a prática antes de seguir. Marque a unidade como estudada no fim dela; o progresso fica salvo neste navegador.</p>
+    <p><b>Plataformas mudam rápido.</b> Se um botão ou nome na sua tela estiver diferente do texto, confie na tela e na Central de Ajuda oficial, e anote a diferença.</p>
   </div>
 </header>
 
-<nav class="tabs" role="tablist">
-  <button role="tab" data-v="visao" aria-selected="true">Visão geral</button>
-  <button role="tab" data-v="nivel-1"><span class="dot" style="background:var(--n1)"></span>Nível 1</button>
-  <button role="tab" data-v="nivel-2"><span class="dot" style="background:var(--n2)"></span>Nível 2</button>
-  <button role="tab" data-v="nivel-3"><span class="dot" style="background:var(--n3)"></span>Nível 3</button>
-  <button role="tab" data-v="fontes">Fontes</button>
-</nav>
+<!-- ===================== NÍVEL 1 ===================== -->
+<section class="unit" id="u01" data-unit="u01">
+  <span class="lvtag l1">Nível 1 · Fundamentos</span>
+  <div class="unit-head"><span class="num">01</span><h2>O trabalho do gestor de tráfego e o funil</h2></div>
+  <p class="goal">Ao final, você sabe o que um gestor de tráfego entrega, como o funil organiza as campanhas e que perguntas fazer ao cliente antes de gastar o primeiro real.</p>
 
-<!-- ===================== VISÃO GERAL ===================== -->
-<section class="view on" id="v-visao">
-  <div class="callout">
-    <strong>Como ler este curso.</strong> Os números entre colchetes (<a class="src" href="#fontes">[1]</a>) levam à fonte. O que <em>não</em> tem colchete é método de ensino (ordem dos módulos, cargas horárias sugeridas, projetos práticos): é a recomendação pedagógica do curso, não um fato de plataforma.
+  <h3>Teoria</h3>
+  <p>Gestor de tráfego é quem planeja, configura, mede e otimiza anúncios pagos para gerar um resultado de negócio: vendas, leads qualificados, agendamentos, instalações de app. O trabalho tem quatro partes que se repetem em ciclo:</p>
+  <div class="tbl"><table>
+    <tr><th>Etapa</th><th>O que você faz</th><th>Entrega</th></tr>
+    <tr><td><b>1. Diagnóstico</b></td><td>Entende a oferta, a margem, o público, a concorrência e o histórico de dados.</td><td>Meta de CPA ou ROAS calculada (unidade 02).</td></tr>
+    <tr><td><b>2. Mensuração</b></td><td>Garante que cada venda ou lead seja registrado corretamente antes de anunciar.</td><td>Pixel, tags, eventos e UTMs testados (unidade 06).</td></tr>
+    <tr><td><b>3. Execução</b></td><td>Monta campanhas, criativos e orçamento em cada plataforma.</td><td>Campanhas no ar com nomenclatura padrão.</td></tr>
+    <tr><td><b>4. Otimização</b></td><td>Lê os dados, testa hipóteses e realoca verba.</td><td>Relatório com decisão, não só números.</td></tr>
+  </table></div>
+
+  <h4>O funil</h4>
+  <p>O funil é a jornada da pessoa: ela <b>descobre</b> a marca, <b>considera</b> a oferta, <b>converte</b> e, idealmente, <b>volta a comprar</b>. As plataformas organizam os objetivos de campanha de forma parecida. O TikTok, por exemplo, agrupa os objetivos em três categorias: reconhecimento (Awareness), consideração (Consideration) e conversão (Conversion) <a class="src" href="#ref-31">[31]</a>. A Meta usa seis objetivos: Reconhecimento, Tráfego, Engajamento, Cadastros, Promoção do app e Vendas <a class="src" href="#ref-35">[35]</a>.</p>
+  <div class="block warn"><span class="k">Erro clássico</span><p>Escolher o objetivo pelo que parece mais barato. A plataforma entrega exatamente o que você pede: se você otimiza para cliques, ela encontra pessoas que clicam, não necessariamente pessoas que compram. Escolha o objetivo pelo resultado de negócio que você quer.</p></div>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · loja de cosméticos (fictício)</span>
+    <p>Uma loja vende um kit de R$ 180. Ela já tem 3.000 visitas por mês no site e quer vender mais. Leitura do gestor:</p>
+    <ul>
+      <li><b>Objetivo principal:</b> vendas no site, otimizando para o evento de compra.</li>
+      <li><b>Pré-requisito:</b> o evento de compra precisa estar chegando corretamente nas plataformas (Pixel/CAPI na Meta, tag/GA4 no Google).</li>
+      <li><b>Apoio:</b> anúncios no Google Pesquisa para quem já procura o produto pelo nome ou pela categoria.</li>
+    </ul>
   </div>
 
-  <div class="grid2">
-    <div class="card">
-      <h3><span class="dot" style="background:var(--n1)"></span>Nível 1 · Fundamentos</h3>
-      <p>Métricas, funil, estrutura de contas Meta e Google, GA4 e LGPD. Termina com a primeira campanha real medida corretamente.</p>
-      <p class="note">Carga sugerida: 6–8 semanas · ~5 h/semana</p>
-    </div>
-    <div class="card">
-      <h3><span class="dot" style="background:var(--n2)"></span>Nível 2 · Intermediário</h3>
-      <p>Advantage+, Performance Max, Demand Gen, TikTok, Conversions API e testes. Termina com um e-commerce rastreado de ponta a ponta.</p>
-      <p class="note">Carga sugerida: 8–10 semanas · ~6 h/semana</p>
-    </div>
-    <div class="card">
-      <h3><span class="dot" style="background:var(--n3)"></span>Nível 3 · Avançado</h3>
-      <p>Server-side tagging, dados offline, MMM, incrementalidade, APIs e gestão de carteira. Termina com um stack de mensuração de agência.</p>
-      <p class="note">Carga sugerida: 10–12 semanas · ~7 h/semana</p>
-    </div>
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · briefing de cliente</span>
+    <p>Escolha um negócio real (seu, de um cliente ou de um conhecido) e responda por escrito:</p>
+    <ol>
+      <li>O que exatamente é vendido, por quanto, e qual a margem bruta em %?</li>
+      <li>Qual é a conversão que importa (compra, lead, mensagem, agendamento)? Onde ela acontece (site, WhatsApp, loja física)?</li>
+      <li>Quem compra hoje? Que dados existem (lista de clientes, histórico de vendas, seguidores)?</li>
+      <li>Quem são 3 concorrentes? Abra a <b>Biblioteca de Anúncios da Meta</b>, que mostra todos os anúncios ativos nas tecnologias da Meta <a class="src" href="#ref-30">[30]</a>, e anote o que cada um anuncia.</li>
+      <li>Qual verba mensal está disponível e por quanto tempo o cliente aceita testar?</li>
+    </ol>
+    <p>Guarde esse documento: ele é a base de todas as práticas seguintes.</p>
   </div>
-
-  <h2 style="font-size:22px;margin:26px 0 12px">O que mudou recentemente (e o curso já inclui)</h2>
-  <div class="timeline">
-    <div class="tl"><time>Jan 2025</time><p>Google lança o <b>Meridian</b>, modelo de marketing mix (MMM) open source, aberto a todos. <a class="src" href="#s10">[10]</a></p></div>
-    <div class="tl"><time>Fev 2025</time><p>Meta renomeia Advantage+ shopping para <b>Advantage+ sales</b> e estende o Advantage+ a campanhas de leads. <a class="src" href="#s22">[22]</a></p></div>
-    <div class="tl"><time>Mai 2025</time><p>Google apresenta o <b>AI Max for Search</b> (correspondência de termos ampliada, personalização de texto e expansão de URL). <a class="src" href="#s1">[1]</a></p></div>
-    <div class="tl"><time>Nov 2025</time><p>O relatório de <b>desempenho por canal</b> passa a existir em todas as campanhas Performance Max. <a class="src" href="#s3">[3]</a></p></div>
-    <div class="tl"><time>Fev–Mai 2026</time><p>Na Marketing API v25, a Meta bloqueia criar e editar campanhas legadas <b>Advantage+ shopping/app</b>; a regra vale para todas as versões a partir de 19/05/2026. <a class="src" href="#s13">[13]</a></p></div>
-    <div class="tl"><time>Mai 2026</time><p>Google anuncia que o <b>Display passa para dentro do Demand Gen</b>, com transição prevista até 2027. <a class="src" href="#s5">[5]</a></p></div>
-    <div class="tl"><time>Jun 2026</time><p>Importação de conversões offline e conversões otimizadas para leads migram para a <b>Data Manager API</b> (bloqueadas na Google Ads API). <a class="src" href="#s7">[7]</a></p></div>
-    <div class="tl"><time>Out 2026</time><p>Meta publica a nova geração do <b>Andromeda</b> (motor de recuperação de anúncios) e diz que ele aumentou as conversões no Facebook em 2,4% desde 2025. <a class="src" href="#s16">[16]</a></p></div>
-  </div>
+  <button class="btn mark" type="button" data-unit="u01">Marcar unidade como estudada</button>
 </section>
 
-<!-- ===================== NÍVEL 1 ===================== -->
-<section class="view" id="v-nivel-1" data-level="1">
-  <div class="levelhead">
-    <div><h2>Nível 1 · Fundamentos</h2><div class="meta">Objetivo: entender o leilão, configurar contas e medir corretamente antes de gastar.</div></div>
-    <div class="progress"><span class="pct">0%</span><div class="bar"><i style="background:var(--n1)"></i></div></div>
+<section class="unit" id="u02" data-unit="u02">
+  <span class="lvtag l1">Nível 1 · Fundamentos</span>
+  <div class="unit-head"><span class="num">02</span><h2>A matemática do tráfego</h2></div>
+  <p class="goal">Ao final, você calcula as métricas principais e define, antes de anunciar, quanto o cliente pode pagar por venda sem perder dinheiro.</p>
+
+  <h3>Teoria</h3>
+  <p>As métricas abaixo são definições matemáticas padrão do mercado. Os nomes podem variar um pouco entre plataformas, mas a conta é sempre a mesma.</p>
+  <div class="tbl"><table>
+    <tr><th>Métrica</th><th>Fórmula</th><th>O que responde</th></tr>
+    <tr><td><b>CPM</b> (custo por mil impressões)</td><td>investimento ÷ impressões × 1.000</td><td>Quanto custa aparecer.</td></tr>
+    <tr><td><b>CTR</b> (taxa de cliques)</td><td>cliques ÷ impressões × 100</td><td>O anúncio desperta interesse?</td></tr>
+    <tr><td><b>CPC</b> (custo por clique)</td><td>investimento ÷ cliques</td><td>Quanto custa cada visita.</td></tr>
+    <tr><td><b>Taxa de conversão</b></td><td>conversões ÷ cliques × 100</td><td>A página convence?</td></tr>
+    <tr><td><b>CPA</b> (custo por aquisição)</td><td>investimento ÷ conversões</td><td>Quanto custa cada venda ou lead.</td></tr>
+    <tr><td><b>ROAS</b> (retorno sobre investimento em anúncios)</td><td>receita ÷ investimento</td><td>Quantos reais voltam para cada real investido.</td></tr>
+    <tr><td><b>Ticket médio</b></td><td>receita ÷ número de pedidos</td><td>Valor médio de cada compra.</td></tr>
+  </table></div>
+  <h4>As duas contas que vêm antes de tudo</h4>
+  <span class="formula">CPA máximo (equilíbrio) = ticket médio × margem bruta</span>
+  <span class="formula">ROAS de equilíbrio = 1 ÷ margem bruta</span>
+  <p>Com CPA acima do máximo, cada venda dá prejuízo. Com ROAS abaixo do equilíbrio, também. A meta real precisa ficar <b>abaixo</b> do CPA máximo (ou <b>acima</b> do ROAS de equilíbrio) para sobrar lucro. Considere também custos que a margem bruta não cobre, como frete grátis, taxas de pagamento e devoluções.</p>
+  <div class="block tip"><span class="k">Encadeamento</span><p>As métricas se multiplicam: <b>CPA = CPC ÷ taxa de conversão</b>. Se o CPA está alto, descubra se o problema é clique caro (anúncio, público, leilão) ou conversão baixa (página, oferta, preço). Cada um tem uma solução diferente.</p></div>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo resolvido (números fictícios)</span>
+    <p>Kit de R$ 180, margem bruta de 40%. No mês, a campanha teve: investimento R$ 3.000, 200.000 impressões, 2.400 cliques, 40 vendas.</p>
+    <div class="tbl"><table>
+      <tr><th>Conta</th><th>Resultado</th></tr>
+      <tr><td>CPM = 3.000 ÷ 200.000 × 1.000</td><td>R$ 15,00</td></tr>
+      <tr><td>CTR = 2.400 ÷ 200.000 × 100</td><td>1,2%</td></tr>
+      <tr><td>CPC = 3.000 ÷ 2.400</td><td>R$ 1,25</td></tr>
+      <tr><td>Taxa de conversão = 40 ÷ 2.400 × 100</td><td>1,67%</td></tr>
+      <tr><td>CPA = 3.000 ÷ 40</td><td>R$ 75,00</td></tr>
+      <tr><td>Receita = 40 × 180</td><td>R$ 7.200</td></tr>
+      <tr><td>ROAS = 7.200 ÷ 3.000</td><td>2,4</td></tr>
+      <tr><td>CPA máximo = 180 × 0,40</td><td>R$ 72,00</td></tr>
+      <tr><td>ROAS de equilíbrio = 1 ÷ 0,40</td><td>2,5</td></tr>
+    </table></div>
+    <p><b>Diagnóstico:</b> ROAS 2,4 parece bom, mas está abaixo do equilíbrio de 2,5. Cada venda custou R$ 75, acima do máximo de R$ 72: a campanha está dando um pequeno prejuízo. Se a taxa de conversão subir de 1,67% para 2% com o mesmo CPC, o CPA cai para R$ 62,50 (1,25 ÷ 0,02) e a operação passa a lucrar. Aqui, melhorar a página pode valer mais do que mexer no anúncio.</p>
   </div>
 
-  <div class="card">
-    <h3><span class="num">M1</span>O negócio antes do anúncio</h3>
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · planilha de viabilidade</span>
+    <ol>
+      <li>Crie uma planilha com as colunas: ticket médio, margem bruta, CPA máximo, ROAS de equilíbrio, verba mensal.</li>
+      <li>Preencha com os dados do negócio do seu briefing (unidade 01).</li>
+      <li>Calcule quantas vendas por mês a verba compra no CPA máximo: <code>verba ÷ CPA máximo</code>.</li>
+      <li>Defina a meta de trabalho: um CPA 20% a 30% abaixo do máximo, para ter lucro (essa folga é uma escolha de gestão; ajuste à realidade do cliente).</li>
+      <li>Se você tiver acesso a uma conta com histórico, calcule CPM, CTR, CPC, taxa de conversão e CPA do último mês e diga onde está o gargalo.</li>
+    </ol>
+  </div>
+  <button class="btn mark" type="button" data-unit="u02">Marcar unidade como estudada</button>
+</section>
+
+<section class="unit" id="u03" data-unit="u03">
+  <span class="lvtag l1">Nível 1 · Fundamentos</span>
+  <div class="unit-head"><span class="num">03</span><h2>Como os leilões de anúncios funcionam</h2></div>
+  <p class="goal">Ao final, você entende por que quem paga mais nem sempre ganha e o que realmente baixa o custo dos anúncios.</p>
+
+  <h3>Teoria</h3>
+  <h4>Meta (Facebook e Instagram)</h4>
+  <p>Cada vez que um anúncio pode aparecer, a Meta faz um leilão. Os modelos calculam um <b>valor total</b> a partir de três fatores: o <b>lance do anunciante</b>, a <b>taxa de ação estimada</b> (a chance de aquela pessoa fazer o que você otimizou) e a <b>qualidade do anúncio</b>. Por isso o maior lance nem sempre vence <a class="src" href="#ref-21">[21]</a>. A Meta também explica que a taxa de ação estimada e a qualidade servem para mostrar anúncios mais relevantes para a pessoa, mesmo que não tenham o maior lance <a class="src" href="#ref-21">[21]</a>.</p>
+  <p>Antes do leilão, existe uma etapa de <b>recuperação</b> (retrieval): o sistema Andromeda reduz dezenas de milhões de anúncios candidatos a alguns milhares, que seguem para o ranqueamento <a class="src" href="#ref-28">[28]</a>. Você vai ver o impacto disso no criativo na unidade 08.</p>
+
+  <h4>Google (Rede de Pesquisa)</h4>
+  <p>No Google, cada busca dispara leilões e cada anúncio recebe um <b>Ad Rank</b>, calculado primeiro para saber se o anúncio pode aparecer e depois para definir a posição <a class="src" href="#ref-3">[3]</a>. O Ad Rank considera seu lance, a qualidade do anúncio e da página de destino, os limites mínimos (thresholds), a competição, o contexto da busca e o impacto esperado dos recursos do anúncio, como sitelinks e telefone <a class="src" href="#ref-3">[3]</a>.</p>
+  <p>O <b>Índice de qualidade</b> (Quality Score) vai de 1 a 10, por palavra-chave, e é formado por três componentes: CTR esperada, relevância do anúncio e experiência na página de destino <a class="src" href="#ref-1">[1]</a>. Atenção a um detalhe que muita gente erra: o Google afirma que o Índice de qualidade <b>não é uma entrada do leilão</b>; é uma ferramenta de diagnóstico <a class="src" href="#ref-1">[1]</a>. Ele resume a qualidade, que essa sim pesa no leilão, e anúncios de maior qualidade costumam pagar menos por clique <a class="src" href="#ref-2">[2]</a>.</p>
+  <div class="block tip"><span class="k">A ideia que une os dois</span><p>Nas duas plataformas, relevância é desconto. Um anúncio que as pessoas querem ver, levando a uma página que cumpre a promessa, compete com lances menores. Aumentar a verba sem melhorar relevância costuma só encarecer o resultado.</p></div>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · por que o anúncio mais barato ganhou (ilustrativo)</span>
+    <p>Dois anunciantes disputam a mesma pessoa no Instagram. O anunciante A dá um lance maior, mas o anúncio é uma arte genérica e a pessoa raramente compra esse tipo de produto. O anunciante B dá um lance menor, mas tem um vídeo que gera boa resposta e a pessoa já demonstrou interesse na categoria. Pela lógica do valor total (lance + chance de ação + qualidade) <a class="src" href="#ref-21">[21]</a>, B pode vencer e pagar menos.</p>
+  </div>
+
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · leia a qualidade de uma conta</span>
+    <ol>
+      <li>Em uma conta do Google Ads com campanhas de Pesquisa, vá à lista de palavras-chave e adicione as colunas de Índice de qualidade e dos três componentes (CTR esperada, relevância do anúncio, experiência na página de destino) <a class="src" href="#ref-1">[1]</a>.</li>
+      <li>Liste as 5 palavras com mais gasto e componente "Abaixo da média".</li>
+      <li>Para cada uma, escreva a ação: anúncio mais alinhado à busca, grupo de anúncios mais específico ou página de destino que entregue o que o anúncio promete <a class="src" href="#ref-1">[1]</a>.</li>
+      <li>Sem conta disponível? Faça 5 buscas comerciais no Google (ex.: "curso de inglês online") e anote, para cada anúncio, se a página aberta cumpre o que o anúncio prometeu.</li>
+    </ol>
+  </div>
+  <button class="btn mark" type="button" data-unit="u03">Marcar unidade como estudada</button>
+</section>
+
+<section class="unit" id="u04" data-unit="u04">
+  <span class="lvtag l1">Nível 1 · Fundamentos</span>
+  <div class="unit-head"><span class="num">04</span><h2>Meta Ads: estrutura, objetivos e aprendizado</h2></div>
+  <p class="goal">Ao final, você monta uma campanha na Meta sabendo o que se decide em cada nível e por que não deve mexer nela todo dia.</p>
+
+  <h3>Teoria</h3>
+  <h4>A hierarquia</h4>
+  <div class="tbl"><table>
+    <tr><th>Nível</th><th>O que se define</th></tr>
+    <tr><td><b>Campanha</b></td><td>O objetivo (um dos seis) e, se usado, o orçamento da campanha.</td></tr>
+    <tr><td><b>Conjunto de anúncios</b></td><td>Evento de conversão, público, posicionamentos, orçamento (quando não é na campanha) e programação.</td></tr>
+    <tr><td><b>Anúncio</b></td><td>Criativo (imagem, vídeo, carrossel), texto, chamada para ação e destino.</td></tr>
+  </table></div>
+  <p>Os seis objetivos atuais são Reconhecimento, Tráfego, Engajamento, Cadastros (Leads), Promoção do app e Vendas. Eles substituíram os antigos 11 objetivos, e a mudança foi anunciada pela Meta em dezembro de 2021 <a class="src" href="#ref-35">[35]</a>.</p>
+
+  <h4>Público: controles × sugestões</h4>
+  <p>Com o <b>público Advantage+</b>, a Meta encontra as pessoas com base nos dados do pixel, no histórico de conversões e no engajamento. Os dados que você informa são <b>sugestões</b>, priorizadas no início antes de o sistema ampliar o alcance <a class="src" href="#ref-37">[37]</a>. Já os <b>controles de público</b> são limites que a Meta respeita: localização, idade mínima, idiomas e públicos personalizados excluídos <a class="src" href="#ref-37">[37]</a>.</p>
+  <div class="block tip"><span class="k">Na prática</span><p>Quer anunciar só para quem ainda não é cliente? A lista de clientes vai como <b>exclusão</b> (controle), não como sugestão. Vende só em Minas Gerais? Localização é controle. Público feminino 25–45? Isso é sugestão: a Meta pode entregar fora dessa faixa se encontrar resultado.</p></div>
+
+  <h4>Fase de aprendizado</h4>
+  <p>Quando um conjunto de anúncios é criado ou sofre uma edição significativa, ele entra na fase de aprendizado. A referência que a Meta usa é de aproximadamente <b>50 eventos de otimização em 7 dias</b> para sair dela <a class="src" href="#ref-36">[36]</a>. Isso tem duas consequências práticas:</p>
+  <ul>
+    <li><b>Orçamento e evento precisam conversar.</b> Se o CPA esperado é R$ 70 e você quer 50 compras por semana, o conjunto precisaria de uns R$ 3.500 por semana. Sem essa verba, otimize para um evento mais frequente (por exemplo, iniciar finalização de compra) ou concentre a verba em menos conjuntos.</li>
+    <li><b>Mexer demais atrapalha.</b> Edições grandes reiniciam o aprendizado. Junte as mudanças e faça de uma vez.</li>
+  </ul>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo de estrutura inicial (loja fictícia, verba de R$ 4.500/mês)</span>
+    <pre>Campanha: [VENDAS] Kit Hidratação | Advantage+ | BR
+  Conjunto: Compra | Público Advantage+ | Controles: Brasil, 18+, excluir clientes 180 dias
+    Anúncio 1: Vídeo 15s, depoimento real de cliente
+    Anúncio 2: Carrossel com os 3 produtos do kit
+    Anúncio 3: Imagem estática com oferta + frete</pre>
+    <p>Por que um só conjunto? Com R$ 150/dia, dividir em cinco conjuntos de R$ 30 deixa cada um longe dos ~50 eventos semanais. Concentrar ajuda o sistema a aprender.</p>
+  </div>
+
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · conta e primeira campanha</span>
+    <ol>
+      <li>Crie ou organize o portfólio empresarial da Meta do cliente, com página do Facebook, conta do Instagram e conta de anúncios. Garanta que a conta pertence ao cliente e você tem acesso como parceiro.</li>
+      <li>No Gerenciador de Eventos, confirme que existe um pixel/conjunto de dados recebendo eventos do site (você vai aprofundar na unidade 06).</li>
+      <li>Monte, sem publicar, uma campanha de Vendas seguindo a estrutura do exemplo. Use o padrão de nome <code>[OBJETIVO] Produto | Tipo | Região</code>.</li>
+      <li>Calcule se a verba diária permite chegar perto de 50 eventos por semana no evento escolhido. Se não, troque o evento ou concentre a verba, e escreva a justificativa.</li>
+    </ol>
+  </div>
+  <button class="btn mark" type="button" data-unit="u04">Marcar unidade como estudada</button>
+</section>
+
+<section class="unit" id="u05" data-unit="u05">
+  <span class="lvtag l1">Nível 1 · Fundamentos</span>
+  <div class="unit-head"><span class="num">05</span><h2>Google Ads: Rede de Pesquisa</h2></div>
+  <p class="goal">Ao final, você monta uma campanha de Pesquisa com palavras-chave, negativas, anúncios responsivos e estratégia de lances adequada.</p>
+
+  <h3>Teoria</h3>
+  <h4>Tipos de correspondência</h4>
+  <div class="tbl"><table>
+    <tr><th>Tipo</th><th>Como escrever</th><th>Alcance</th></tr>
+    <tr><td><b>Ampla</b></td><td><code>tênis de corrida</code></td><td>Buscas relacionadas à palavra-chave; é o padrão quando nada é especificado <a class="src" href="#ref-4">[4]</a>.</td></tr>
+    <tr><td><b>Frase</b></td><td><code>"tênis de corrida"</code></td><td>Buscas que incluem o significado da palavra-chave <a class="src" href="#ref-4">[4]</a>.</td></tr>
+    <tr><td><b>Exata</b></td><td><code>[tênis de corrida]</code></td><td>Buscas com o mesmo significado ou intenção; dá o maior controle e o menor alcance <a class="src" href="#ref-4">[4]</a>.</td></tr>
+  </table></div>
+  <p>Os tipos se sobrepõem: a frase alcança tudo o que a exata alcança e mais; a ampla alcança tudo o que frase e exata alcançam e mais <a class="src" href="#ref-4">[4]</a>. <b>Palavras-chave negativas</b> fazem o caminho inverso: impedem o anúncio de aparecer em buscas que você não quer (ex.: "grátis", "vaga de emprego").</p>
+
+  <h4>Anúncios responsivos de pesquisa (RSA)</h4>
+  <p>Você fornece de 3 a 15 títulos e de 2 a 4 descrições, e o Google testa as combinações <a class="src" href="#ref-5">[5]</a>. Limites: títulos com até 30 caracteres, descrições com até 90 e campos de caminho com até 15 <a class="src" href="#ref-5">[5]</a>. É possível <b>fixar</b> um título numa posição quando ele precisa sempre aparecer, mas isso reduz as combinações.</p>
+
+  <h4>Estratégias de lances</h4>
+  <p>Smart Bidding são as estratégias que usam IA do Google para otimizar conversões ou valor em cada leilão: <b>CPA desejado</b>, <b>ROAS desejado</b>, <b>Maximizar conversões</b> e <b>Maximizar valor da conversão</b> <a class="src" href="#ref-6">[6]</a>. Desde junho de 2026, o Google passou a exibir "Maximizar conversões com CPA desejado" apenas como "CPA desejado" e "Maximizar valor da conversão com ROAS desejado" como "ROAS desejado" <a class="src" href="#ref-6">[6]</a>.</p>
+  <div class="tbl"><table>
+    <tr><th>Se o objetivo é…</th><th>Use</th></tr>
+    <tr><td>O máximo de conversões dentro da verba</td><td>Maximizar conversões</td></tr>
+    <tr><td>Conversões a um custo médio definido</td><td>CPA desejado</td></tr>
+    <tr><td>O máximo de receita dentro da verba</td><td>Maximizar valor da conversão</td></tr>
+    <tr><td>Receita com retorno mínimo definido</td><td>ROAS desejado</td></tr>
+  </table></div>
+
+  <h4>AI Max for Search</h4>
+  <p>Lançado em maio de 2025, o AI Max é um conjunto de recursos para campanhas de Pesquisa: correspondência de termos de pesquisa (amplia o alcance além das palavras-chave), personalização de texto e expansão de URL final <a class="src" href="#ref-8">[8]</a>. A partir de setembro de 2026, campanhas que usam a configuração de correspondência ampla no nível da campanha passaram a ser atualizadas automaticamente para o AI Max <a class="src" href="#ref-7">[7]</a>.</p>
+  <div class="block warn"><span class="k">Cuidado com a ampla sem dados</span><p>Correspondência ampla e AI Max dependem de sinais de conversão para escolher bem as buscas. Em conta nova, sem conversões medidas, comece com exata e frase, acompanhe o relatório de termos de pesquisa toda semana e amplie quando houver conversões chegando.</p></div>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · clínica de fisioterapia em BH (fictício)</span>
+    <pre>Campanha: [PESQ] Fisioterapia | BH + 15 km | Maximizar conversões
+  Grupo: Fisioterapia ortopédica
+    [fisioterapia ortopédica bh]
+    "fisioterapia joelho"
+    "fisioterapeuta perto de mim"
+  Negativas da campanha: -curso -faculdade -concurso -salário -gratuita</pre>
+    <p>Títulos do RSA (até 30 caracteres cada): "Fisioterapia Ortopédica em BH" (29), "Agende Sua Avaliação Hoje" (25), "Atendemos Convênios" (19).</p>
+  </div>
+
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · campanha de Pesquisa no papel e na conta</span>
+    <ol>
+      <li>Liste 20 buscas que um cliente real faria. Separe em 2 ou 3 grupos por tema.</li>
+      <li>Defina o tipo de correspondência de cada palavra e uma lista de pelo menos 15 negativas.</li>
+      <li>Escreva um RSA com 10 títulos (até 30 caracteres) e 4 descrições (até 90). Conte os caracteres.</li>
+      <li>Escolha a estratégia de lances pela tabela acima e justifique.</li>
+      <li>Se tiver acesso a uma conta com campanha ativa, abra o relatório de termos de pesquisa dos últimos 30 dias e adicione 10 negativas novas.</li>
+    </ol>
+  </div>
+  <button class="btn mark" type="button" data-unit="u05">Marcar unidade como estudada</button>
+</section>
+
+<section class="unit" id="u06" data-unit="u06">
+  <span class="lvtag l1">Nível 1 · Fundamentos</span>
+  <div class="unit-head"><span class="num">06</span><h2>Mensuração básica: Pixel, GA4, tags e UTMs</h2></div>
+  <p class="goal">Ao final, você garante que cada venda ou lead seja registrado antes de investir, e sabe conferir isso.</p>
+
+  <h3>Teoria</h3>
+  <h4>Meta Pixel e eventos padrão</h4>
+  <p>O Pixel é um código instalado no site que envia eventos para a Meta. Ele usa a função <code>fbq('track')</code> para os <b>eventos padrão</b> <a class="src" href="#ref-22">[22]</a>. Os mais usados:</p>
+  <div class="tbl"><table>
+    <tr><th>Evento</th><th>Quando disparar</th></tr>
+    <tr><td><code>ViewContent</code></td><td>Visualização de página de produto.</td></tr>
+    <tr><td><code>AddToCart</code></td><td>Produto adicionado ao carrinho.</td></tr>
+    <tr><td><code>InitiateCheckout</code></td><td>Início da finalização da compra.</td></tr>
+    <tr><td><code>Lead</code></td><td>Cadastro concluído <a class="src" href="#ref-22">[22]</a>.</td></tr>
+    <tr><td><code>Purchase</code></td><td>Compra concluída, na página de confirmação <a class="src" href="#ref-22">[22]</a>.</td></tr>
+  </table></div>
+  <pre>fbq('track', 'Purchase', { value: 180.00, currency: 'BRL' });</pre>
+  <p>Envie sempre <code>value</code> e <code>currency</code> na compra: sem valor, a plataforma não consegue otimizar por receita.</p>
+
+  <h4>GA4: eventos e eventos-chave</h4>
+  <p>No Google Analytics 4, tudo é evento. Os eventos que você marca como importantes para o negócio se chamam <b>eventos-chave</b> (key events); antes eles se chamavam "conversões" <a class="src" href="#ref-15">[15]</a>. A palavra <b>conversão</b> agora é usada para o que pode ser usado em lances e relatórios no Google Ads, e você cria conversões do Google Ads a partir dos eventos-chave do GA4 <a class="src" href="#ref-15">[15]</a>.</p>
+
+  <h4>Google Tag Manager e UTMs</h4>
+  <p>O Google Tag Manager (GTM) organiza as tags do site (Google Ads, GA4, Pixel) num só lugar, com acionadores e modo de visualização para testar antes de publicar. As <b>UTMs</b> são parâmetros no link do anúncio que dizem de onde veio a visita: <code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code>, <code>utm_content</code>.</p>
+  <pre>https://loja.com.br/kit?utm_source=meta&amp;utm_medium=paid_social&amp;utm_campaign=vendas_kit_nov26&amp;utm_content=video_depoimento</pre>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · o número que não bate</span>
+    <p>O Gerenciador de Anúncios da Meta mostra 52 compras no mês; o GA4 mostra 38 vindas da Meta; a loja registrou 61 pedidos no total. Isso é normal: cada ferramenta usa sua janela e seu modelo de atribuição, e parte das pessoas recusa cookies. A regra do gestor: a <b>verdade financeira</b> é o sistema da loja. As plataformas servem para comparar campanhas entre si e otimizar. Documente as diferenças e acompanhe a tendência, não o número absoluto.</p>
+  </div>
+
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · plano de mensuração</span>
+    <ol>
+      <li>Monte uma tabela: ação no site → evento Meta → evento GA4 → é evento-chave? → é conversão no Google Ads?</li>
+      <li>Faça uma compra ou cadastro de teste no site e confira o evento no Gerenciador de Eventos da Meta e no relatório em tempo real do GA4.</li>
+      <li>Confirme que a compra envia <code>value</code> e <code>currency</code>.</li>
+      <li>Crie seu padrão de UTMs (fonte, meio, campanha, conteúdo) e um modelo para gerar os links.</li>
+    </ol>
+  </div>
+  <button class="btn mark" type="button" data-unit="u06">Marcar unidade como estudada</button>
+</section>
+
+<section class="unit" id="u07" data-unit="u07">
+  <span class="lvtag l1">Nível 1 · Fundamentos</span>
+  <div class="unit-head"><span class="num">07</span><h2>LGPD, cookies e consentimento</h2></div>
+  <p class="goal">Ao final, você sabe o que a LGPD exige de quem coleta dados para anúncios e como o Consent Mode do Google se encaixa nisso.</p>
+
+  <h3>Teoria</h3>
+  <h4>Conceitos da Lei 13.709/2018 (LGPD)</h4>
+  <ul>
+    <li><b>Dado pessoal:</b> informação relacionada a pessoa natural identificada ou identificável (art. 5º, I) <a class="src" href="#ref-33">[33]</a>.</li>
+    <li><b>Dado sensível:</b> inclui origem racial ou étnica, convicção religiosa, saúde, vida sexual, dado genético ou biométrico, entre outros (art. 5º, II) <a class="src" href="#ref-33">[33]</a>.</li>
+    <li><b>Consentimento:</b> manifestação livre, informada e inequívoca pela qual o titular concorda com o tratamento para uma finalidade determinada (art. 5º, XII) <a class="src" href="#ref-33">[33]</a>.</li>
+  </ul>
+  <p>O tratamento de dados só pode acontecer nas hipóteses do art. 7º, como o consentimento do titular (inciso I) ou o legítimo interesse do controlador, salvo se prevalecerem os direitos do titular (inciso IX) <a class="src" href="#ref-33">[33]</a>. O consentimento pode ser revogado a qualquer momento, por procedimento gratuito e facilitado (art. 8º, §5º) <a class="src" href="#ref-33">[33]</a>. O titular tem direitos como confirmação da existência de tratamento, acesso, correção e revogação do consentimento (art. 18) <a class="src" href="#ref-33">[33]</a>. A multa simples pode chegar a 2% do faturamento no Brasil no último exercício, limitada a R$ 50 milhões por infração (art. 52, II) <a class="src" href="#ref-33">[33]</a>.</p>
+
+  <h4>Guia de cookies da ANPD</h4>
+  <p>Em outubro de 2022, a ANPD publicou o guia orientativo "Cookies e proteção de dados pessoais", com recomendações para banners e políticas de cookies <a class="src" href="#ref-34">[34]</a>. O guia é um documento de interpretação da LGPD, não uma norma regulamentadora <a class="src" href="#ref-34">[34]</a>.</p>
+
+  <h4>Consent Mode do Google</h4>
+  <p>O Consent Mode comunica ao Google o estado de consentimento do usuário, e as tags ajustam seu comportamento de acordo com a escolha <a class="src" href="#ref-16">[16]</a>. Há duas formas de implementar <a class="src" href="#ref-17">[17]</a>:</p>
+  <div class="tbl"><table>
+    <tr><th></th><th>Básico</th><th>Avançado</th></tr>
+    <tr><td>Carregamento das tags</td><td>Bloqueadas até a pessoa interagir com o banner</td><td>Carregam com padrão "negado", salvo configuração diferente</td></tr>
+    <tr><td>Modelagem de conversões</td><td>Modelo geral (menos detalhado)</td><td>Modelo específico do anunciante (mais detalhado)</td></tr>
+  </table></div>
+  <p>Para tráfego do Espaço Econômico Europeu, o Google exige o Consent Mode atualizado (v2) para manter mensuração e personalização; quem não anuncia no EEE não precisa fazer nada por causa dessa exigência específica <a class="src" href="#ref-18">[18]</a>.</p>
+  <div class="block warn"><span class="k">No Brasil</span><p>A exigência do Consent Mode v2 é do Google para o tráfego europeu. Para público brasileiro, a obrigação vem da LGPD. O Consent Mode continua sendo uma boa forma técnica de respeitar a escolha do usuário no banner. Este curso não é aconselhamento jurídico: dúvidas sobre base legal vão para o encarregado (DPO) ou advogado do cliente.</p></div>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · checklist de uma loja (fictício)</span>
     <ul>
-      <li><input type="checkbox" id="1-1"><label for="1-1">Funil (descoberta → consideração → conversão → recompra) e qual objetivo de campanha serve a cada etapa.</label></li>
-      <li><input type="checkbox" id="1-2"><label for="1-2">Métricas essenciais: CPM, CTR, CPC, taxa de conversão, CPA, ROAS, ticket médio, LTV e margem.</label></li>
-      <li><input type="checkbox" id="1-3"><label for="1-3">Calcular o CPA máximo e o ROAS de equilíbrio a partir da margem do cliente.</label></li>
-      <li><input type="checkbox" id="1-4"><label for="1-4">Briefing de cliente: oferta, público, concorrência, sazonalidade, verba e meta.</label></li>
+      <li>Banner com opções claras de aceitar e recusar cookies de publicidade, alinhado ao guia da ANPD.</li>
+      <li>Política de privacidade e de cookies acessível em todas as páginas.</li>
+      <li>Tags de publicidade respeitando a escolha (Consent Mode no Google; disparo condicionado no Pixel).</li>
+      <li>Nenhum dado sensível em parâmetros de anúncio ou em públicos (ex.: não criar público "pessoas com diabetes" a partir de formulário).</li>
     </ul>
   </div>
 
-  <div class="card">
-    <h3><span class="num">M2</span>Meta Ads: estrutura e o padrão Advantage+</h3>
-    <ul>
-      <li><input type="checkbox" id="1-5"><label for="1-5">Portfólio empresarial, conta de anúncios, página, Instagram, pixel/dataset e Gerenciador de Eventos.</label></li>
-      <li><input type="checkbox" id="1-6"><label for="1-6">Hierarquia campanha → conjunto → anúncio, e o que se configura em cada nível.</label></li>
-      <li><input type="checkbox" id="1-7"><label for="1-7">Advantage+ como padrão: a Meta passou a trazer as automações Advantage+ para dentro do fluxo normal de criação de campanhas. <a class="src" href="#s23">[23]</a></label></li>
-      <li><input type="checkbox" id="1-8"><label for="1-8">Campanhas Advantage+ de vendas e de leads: o que a IA decide (público, posicionamento, orçamento) e o que continua com você (oferta, criativo, evento de conversão). <a class="src" href="#s22">[22]</a></label></li>
-    </ul>
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · auditoria de privacidade</span>
+    <ol>
+      <li>Abra o site do cliente em janela anônima. Há banner? Dá para recusar com a mesma facilidade de aceitar?</li>
+      <li>Recuse os cookies e, com as ferramentas de desenvolvedor do navegador (aba Rede), veja se as tags de publicidade continuam disparando como se você tivesse aceitado.</li>
+      <li>Leia a política de privacidade e verifique se ela cita os anúncios e as ferramentas usadas (Meta, Google, TikTok).</li>
+      <li>Escreva um relatório de uma página com o que está certo, o que falta e a quem encaminhar a parte jurídica.</li>
+    </ol>
   </div>
-
-  <div class="card">
-    <h3><span class="num">M3</span>Google Ads: Rede de Pesquisa</h3>
-    <ul>
-      <li><input type="checkbox" id="1-9"><label for="1-9">Intenção de busca, palavras-chave, tipos de correspondência, negativas e anúncios responsivos.</label></li>
-      <li><input type="checkbox" id="1-10"><label for="1-10">Estratégias de lances automáticos (maximizar conversões, CPA desejado, ROAS desejado).</label></li>
-      <li><input type="checkbox" id="1-11"><label for="1-11">AI Max for Search: correspondência ampliada sem palavra-chave, personalização de texto (antes "recursos criados automaticamente") e expansão de URL final. <a class="src" href="#s1">[1]</a></label></li>
-    </ul>
-    <div class="fact"><b>Dado oficial do Google:</b> anunciantes que ativam o AI Max costumam ver 14% mais conversões (ou valor de conversão) com CPA/ROAS parecido; em campanhas que ainda usam principalmente correspondência exata e de frase, o ganho típico chega a 27%. <a class="src" href="#s1">[1]</a></div>
-    <p class="note">Dado divulgado pelo próprio Google. Valide sempre com testes na sua conta.</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="num">M4</span>Mensuração básica: GA4 e Tag Manager</h3>
-    <ul>
-      <li><input type="checkbox" id="1-12"><label for="1-12">Modelo de eventos do GA4, eventos-chave, públicos, atribuição e vinculação com o Google Ads.</label></li>
-      <li><input type="checkbox" id="1-13"><label for="1-13">Google Tag Manager no lado do cliente: tags, acionadores, variáveis, modo de visualização e publicação. <a class="src" href="#s9">[9]</a></label></li>
-      <li><input type="checkbox" id="1-14"><label for="1-14">Padrão de UTMs e nomenclatura de campanhas para a agência.</label></li>
-      <li><input type="checkbox" id="1-15"><label for="1-15">Cursos gratuitos da Analytics Academy no Skillshop. <a class="src" href="#s12">[12]</a></label></li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="num">M5</span>LGPD, cookies e consentimento</h3>
-    <ul>
-      <li><input type="checkbox" id="1-16"><label for="1-16">Lei 13.709/2018 (LGPD): bases legais, consentimento, direitos do titular. <a class="src" href="#s24">[24]</a></label></li>
-      <li><input type="checkbox" id="1-17"><label for="1-17">Guia de Cookies da ANPD (out/2022): categorias de cookies e boas práticas de banner. É um documento de interpretação, não uma norma regulamentadora. <a class="src" href="#s21">[21]</a></label></li>
-      <li><input type="checkbox" id="1-18"><label for="1-18">Consent Mode v2 do Google: obrigatório para tráfego do Espaço Econômico Europeu (EEE) para manter mensuração, personalização e remarketing. <a class="src" href="#s8">[8]</a></label></li>
-    </ul>
-    <p class="note">Atenção: a exigência do Consent Mode v2 se aplica ao tráfego do EEE. Para público só do Brasil, a obrigação é cumprir a LGPD; o Consent Mode continua sendo uma boa forma técnica de respeitar a escolha do usuário. Na dúvida, consulte um advogado de proteção de dados.</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="num">🎓</span>Certificações do nível</h3>
-    <ul>
-      <li><input type="checkbox" id="1-19"><label for="1-19"><b>Google Ads Search</b>: gratuita, no Skillshop, disponível em 22 idiomas. <a class="src" href="#s11">[11]</a></label></li>
-      <li><input type="checkbox" id="1-20"><label for="1-20"><b>Google Analytics Certification</b> (GA4): gratuita, no Skillshop. <a class="src" href="#s12">[12]</a></label></li>
-      <li><input type="checkbox" id="1-21"><label for="1-21"><b>Meta Certified Digital Marketing Associate</b>: prova paga (exames associate custam até o equivalente a US$ 99; o valor varia por país). <a class="src" href="#s17">[17]</a></label></li>
-    </ul>
-  </div>
-
-  <div class="card proj">
-    <h3><span class="num">PROJETO 1</span>Auditoria + primeira campanha</h3>
-    <p><span class="tag">Entrega</span>Plano de mensuração (eventos, UTMs, banner de cookies) para um site real, uma campanha de Pesquisa e uma Advantage+ com verba de teste, e um relatório de 1 página com CPA e ROAS comparados à meta calculada no M1.</p>
-  </div>
+  <button class="btn mark" type="button" data-unit="u07">Marcar unidade como estudada</button>
 </section>
 
 <!-- ===================== NÍVEL 2 ===================== -->
-<section class="view" id="v-nivel-2" data-level="2">
-  <div class="levelhead">
-    <div><h2>Nível 2 · Intermediário</h2><div class="meta">Objetivo: operar campanhas automatizadas com dados de conversão confiáveis em várias plataformas.</div></div>
-    <div class="progress"><span class="pct">0%</span><div class="bar"><i style="background:var(--n2)"></i></div></div>
+<section class="unit" id="u08" data-unit="u08">
+  <span class="lvtag l2">Nível 2 · Intermediário</span>
+  <div class="unit-head"><span class="num">08</span><h2>Meta: campanhas Advantage+, criativo e atribuição</h2></div>
+  <p class="goal">Ao final, você opera campanhas automatizadas da Meta sabendo onde está sua alavanca (oferta, criativo, sinal) e lê os resultados com a atribuição de 2026.</p>
+
+  <h3>Teoria</h3>
+  <h4>Campanhas Advantage+</h4>
+  <p>Em fevereiro de 2025, a Meta renomeou as campanhas Advantage+ de compras para Advantage+ de vendas e levou a lógica Advantage+ também para campanhas de cadastros <a class="src" href="#ref-38">[38]</a>. Na Marketing API v25 (fevereiro de 2026), deixou de ser possível criar, duplicar ou editar as campanhas legadas Advantage+ de compras e de apps; desde 19/05/2026 isso vale para todas as versões da API, e as campanhas devem migrar para a estrutura atual de campanhas Advantage+ <a class="src" href="#ref-27">[27]</a>.</p>
+
+  <h4>Por que o criativo virou a principal alavanca</h4>
+  <p>O Andromeda é o sistema de recuperação de anúncios da Meta: ele escolhe, entre milhões, os candidatos que seguem para o leilão <a class="src" href="#ref-28">[28]</a>. Em outubro de 2026, a Meta publicou a nova geração do sistema, que pontua todos os anúncios elegíveis em escala, e informou que o Andromeda aumentou as conversões no Facebook em 2,4% desde 2025 <a class="src" href="#ref-29">[29]</a>.</p>
+  <p><b>Leitura de gestor (não é regra publicada pela Meta):</b> quando a máquina decide quem vê o anúncio, o que você controla é o que entra nela. Criativos realmente diferentes entre si (ângulo, formato, mensagem, pessoa que fala) dão ao sistema mais opções para combinar com pessoas diferentes. Dez versões da mesma arte com cores trocadas não fazem isso.</p>
+
+  <h4>Atribuição em 2026</h4>
+  <p>Em 12/01/2026, a Meta deixou de retornar na Ads Insights API as janelas de 7 dias e 28 dias após visualização. Continuam disponíveis 1 dia após o clique, 7 dias após o clique, 28 dias após o clique, 1 dia após visualização engajada e 1 dia após visualização <a class="src" href="#ref-26">[26]</a>. Comparações com relatórios antigos que usavam visualização de 7 dias vão mostrar queda de conversões que não é queda real de vendas.</p>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · matriz de criativos (fictício)</span>
+    <div class="tbl"><table>
+      <tr><th>Ângulo</th><th>Formato</th><th>Ideia</th></tr>
+      <tr><td>Dor</td><td>Vídeo 9:16, 20s</td><td>"Pele ressecada no inverno?" — cliente real mostrando antes e depois</td></tr>
+      <tr><td>Prova social</td><td>Carrossel</td><td>Prints de avaliações reais com nota</td></tr>
+      <tr><td>Oferta</td><td>Imagem estática</td><td>Kit + frete grátis acima de R$ 150</td></tr>
+      <tr><td>Autoridade</td><td>Vídeo 1:1</td><td>Farmacêutica explica os ativos</td></tr>
+      <tr><td>Uso</td><td>Vídeo 9:16, 15s</td><td>Rotina de 3 passos com o produto</td></tr>
+    </table></div>
+    <p>Depoimentos e avaliações precisam ser reais e autorizados: inventar prova social é enganoso e pode violar as políticas de publicidade e o Código de Defesa do Consumidor.</p>
   </div>
 
-  <div class="card">
-    <h3><span class="num">M1</span>Meta: Advantage+ e criativo como alavanca</h3>
-    <ul>
-      <li><input type="checkbox" id="2-1"><label for="2-1">Migrar campanhas legadas Advantage+ shopping/app para a estrutura atual de campanhas Advantage+. <a class="src" href="#s13">[13]</a></label></li>
-      <li><input type="checkbox" id="2-2"><label for="2-2">Como funciona o Andromeda: a etapa de recuperação reduz dezenas de milhões de anúncios candidatos a alguns milhares antes do ranqueamento. <a class="src" href="#s15">[15]</a></label></li>
-      <li><input type="checkbox" id="2-3"><label for="2-3">Nova geração do Andromeda (out/2026): pontua todos os anúncios elegíveis em escala, com ganho de conversões reportado pela Meta. <a class="src" href="#s16">[16]</a></label></li>
-      <li><input type="checkbox" id="2-4"><label for="2-4">Portfólio de criativos: variação real de ângulo, formato e mensagem (não só trocar a cor); rotina de teste e substituição.</label></li>
-    </ul>
-    <p class="note">Leitura do instrutor: se a IA escolhe quem vê o anúncio, o que diferencia uma conta da outra é a oferta, o criativo e a qualidade do sinal de conversão. É uma conclusão prática, não uma regra publicada pela Meta.</p>
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · rotina criativa</span>
+    <ol>
+      <li>Monte uma matriz com 5 ângulos × 2 formatos para o produto do seu briefing.</li>
+      <li>Na Biblioteca de Anúncios <a class="src" href="#ref-30">[30]</a>, encontre 3 anúncios de concorrentes ativos há bastante tempo (sinal de que funcionam) e anote ângulo e formato.</li>
+      <li>Produza ou briefe 4 criativos diferentes entre si e coloque-os no mesmo conjunto.</li>
+      <li>Defina uma regra de troca: a cada 2 semanas, pause o pior e entre um ângulo novo.</li>
+      <li>Ao comparar meses, confira a janela de atribuição do relatório e anote-a no topo.</li>
+    </ol>
+  </div>
+  <button class="btn mark" type="button" data-unit="u08">Marcar unidade como estudada</button>
+</section>
+
+<section class="unit" id="u09" data-unit="u09">
+  <span class="lvtag l2">Nível 2 · Intermediário</span>
+  <div class="unit-head"><span class="num">09</span><h2>Google: Performance Max e Demand Gen</h2></div>
+  <p class="goal">Ao final, você sabe quando usar PMax e Demand Gen, monta grupos de recursos e lê o desempenho por canal.</p>
+
+  <h3>Teoria</h3>
+  <h4>Performance Max (PMax)</h4>
+  <p>A PMax é uma campanha baseada em metas que acessa todo o inventário do Google Ads (YouTube, Display, Pesquisa, Discover, Gmail e Maps) a partir de uma só campanha, e pode complementar as campanhas de Pesquisa <a class="src" href="#ref-9">[9]</a>.</p>
+  <ul>
+    <li><b>Grupos de recursos (asset groups):</b> conjuntos de textos, imagens, logotipos e vídeos em torno de um tema ou público; a IA do Google combina esses recursos para montar os anúncios <a class="src" href="#ref-9">[9]</a>.</li>
+    <li><b>Sinais de público:</b> sugestões de público que ajudam a IA a otimizar para as metas <a class="src" href="#ref-10">[10]</a>. São pistas, não limites.</li>
+    <li><b>Controles:</b> temas de pesquisa, palavras-chave negativas, exclusões de marca e expansão de URL final <a class="src" href="#ref-9">[9]</a>.</li>
+  </ul>
+  <p>Desde novembro de 2025, todas as campanhas PMax têm relatório de <b>desempenho por canal</b> <a class="src" href="#ref-11">[11]</a>: você vê quanto veio de Pesquisa, YouTube, Display etc.</p>
+
+  <h4>Demand Gen</h4>
+  <p>Demand Gen é a campanha para gerar demanda com anúncios visuais no YouTube (inclusive Shorts), Discover, Gmail, Maps e Rede de Display <a class="src" href="#ref-13">[13]</a>. Em 26/05/2026, o Google anunciou que as campanhas de Display passam para dentro do Demand Gen, com transição prevista até 2027 <a class="src" href="#ref-12">[12]</a>.</p>
+  <div class="tbl"><table>
+    <tr><th>Situação</th><th>Campanha</th></tr>
+    <tr><td>Pessoa já procura o produto</td><td>Pesquisa (unidade 05)</td></tr>
+    <tr><td>E-commerce com feed de produtos e conversões medidas</td><td>PMax</td></tr>
+    <tr><td>Criar interesse em quem ainda não procura, com vídeo e imagem</td><td>Demand Gen</td></tr>
+  </table></div>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · PMax de uma loja (fictício)</span>
+    <pre>Campanha: [PMAX] Loja | Feed completo | ROAS desejado 350%
+  Grupo de recursos 1: Linha Hidratação
+    Sinais: compradores dos últimos 180 dias; buscas "hidratante facial", "kit skincare"
+  Grupo de recursos 2: Linha Proteção Solar
+    Sinais: visitantes da categoria; buscas "protetor solar facial"
+  Exclusões de marca: a própria marca (já coberta pela campanha de Pesquisa de marca)</pre>
+    <p>Por que ROAS 350%? A margem é 40%, então o ROAS de equilíbrio é 2,5 (250%). A meta de 3,5 deixa folga para lucro (unidade 02).</p>
   </div>
 
-  <div class="card">
-    <h3><span class="num">M2</span>Google: Performance Max e Demand Gen</h3>
-    <ul>
-      <li><input type="checkbox" id="2-5"><label for="2-5">Performance Max: grupos de recursos, sinais de público, feed do Merchant Center e metas de valor.</label></li>
-      <li><input type="checkbox" id="2-6"><label for="2-6">Relatório de desempenho por canal (Pesquisa, YouTube, Display, Discover, Gmail, Maps), disponível em todas as campanhas PMax desde nov/2025. <a class="src" href="#s3">[3]</a> <a class="src" href="#s2">[2]</a></label></li>
-      <li><input type="checkbox" id="2-7"><label for="2-7">Demand Gen: YouTube (inclusive Shorts), Discover, Gmail, Maps e Rede de Display. <a class="src" href="#s6">[6]</a></label></li>
-      <li><input type="checkbox" id="2-8"><label for="2-8">Migração do Display para o Demand Gen: ferramenta de migração voluntária desde jun/2026; depois, novas campanhas só dentro do Demand Gen. <a class="src" href="#s6">[6]</a> <a class="src" href="#s5">[5]</a></label></li>
-    </ul>
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · leitura de PMax</span>
+    <ol>
+      <li>Se tiver acesso a uma PMax ativa, abra o relatório de desempenho por canal e anote a % do investimento e das conversões por canal.</li>
+      <li>Abra os termos de pesquisa/insights da PMax e veja quanto vem de buscas pela própria marca.</li>
+      <li>Sem conta? Monte no papel 2 grupos de recursos para o negócio do briefing: 5 títulos, 5 descrições, 5 imagens planejadas e 2 sinais de público por grupo.</li>
+      <li>Se o cliente usa campanhas de Display, verifique se a ferramenta de migração para Demand Gen já aparece na conta e planeje a migração.</li>
+    </ol>
+  </div>
+  <button class="btn mark" type="button" data-unit="u09">Marcar unidade como estudada</button>
+</section>
+
+<section class="unit" id="u10" data-unit="u10">
+  <span class="lvtag l2">Nível 2 · Intermediário</span>
+  <div class="unit-head"><span class="num">10</span><h2>Conversions API e conversões otimizadas</h2></div>
+  <p class="goal">Ao final, você implementa o envio de eventos pelo servidor sem contar vendas em dobro e melhora a correspondência dos dados.</p>
+
+  <h3>Teoria</h3>
+  <h4>Conversions API (CAPI) da Meta</h4>
+  <p>A CAPI envia eventos do seu servidor direto para a Meta. A Meta descreve duas configurações <a class="src" href="#ref-24">[24]</a>:</p>
+  <ul>
+    <li><b>Redundante:</b> o mesmo evento vai pelo Pixel e pela CAPI. Exige um <code>event_id</code> persistente e o mesmo <code>event_name</code> nos dois.</li>
+    <li><b>Dividida:</b> eventos diferentes por canal, por exemplo PageView e ViewContent pelo Pixel, e Lead ou Purchase pela CAPI.</li>
+  </ul>
+  <h4>Desduplicação</h4>
+  <p>Para a Meta tratar dois envios como o mesmo evento, o <code>eventID</code> do Pixel precisa ser igual ao <code>event_id</code> da CAPI, e o <code>event</code> do Pixel igual ao <code>event_name</code> da CAPI <a class="src" href="#ref-23">[23]</a>.</p>
+  <pre>// Navegador (Pixel)
+fbq('track', 'Purchase', {value: 180, currency: 'BRL'}, {eventID: 'pedido-10482'});
+
+// Servidor (CAPI) - mesmo nome e mesmo ID
+{ "event_name": "Purchase", "event_id": "pedido-10482", "action_source": "website", ... }</pre>
+  <h4>Qualidade da correspondência (EMQ)</h4>
+  <p>A Event Match Quality é uma nota até 10 que indica o quanto as informações do cliente enviadas pelo servidor ajudam a ligar o evento a uma conta da Meta <a class="src" href="#ref-25">[25]</a>. Mais parâmetros de cliente bem preenchidos (e-mail e telefone com hash, <code>fbp</code>, <code>fbc</code>, IP e user agent) tendem a melhorar a nota. A Meta recomenda incluir <code>external_id</code> e <code>event_id</code> em todos os eventos <a class="src" href="#ref-42">[42]</a>.</p>
+
+  <h4>Conversões otimizadas do Google</h4>
+  <p>No Google, as conversões otimizadas (enhanced conversions) enviam dados primários com hash para melhorar a mensuração. As conversões otimizadas para web e para leads agora são uma única configuração liga/desliga <a class="src" href="#ref-14">[14]</a>. Desde 15/06/2026, importações de conversões offline e envios de conversões otimizadas para leads passaram para a Data Manager API e estão bloqueados na Google Ads API <a class="src" href="#ref-14">[14]</a>.</p>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · venda contada duas vezes (fictício)</span>
+    <p>Uma loja WooCommerce instalou um plugin de CAPI e manteve o Pixel antigo. O Gerenciador passou a mostrar 90 compras num mês em que a loja teve 50. Diagnóstico: o Pixel enviava <code>Purchase</code> sem <code>eventID</code>, e o servidor enviava com <code>event_id</code> diferente. Correção: usar o número do pedido como ID nos dois lados. No mês seguinte, as compras reportadas voltaram para perto do número real.</p>
   </div>
 
-  <div class="card">
-    <h3><span class="num">M3</span>Rastreamento de verdade: CAPI e conversões otimizadas</h3>
-    <ul>
-      <li><input type="checkbox" id="2-9"><label for="2-9">Meta Conversions API: integração direta ou via parceiro, envio de eventos, desduplicação com o pixel e verificação da correspondência. <a class="src" href="#s14">[14]</a></label></li>
-      <li><input type="checkbox" id="2-10"><label for="2-10">Configuração dividida: por exemplo, PageView e ViewContent pelo pixel; Lead e Purchase pela CAPI. <a class="src" href="#s14">[14]</a></label></li>
-      <li><input type="checkbox" id="2-11"><label for="2-11">Conversões otimizadas do Google (web e leads), agora em uma única configuração liga/desliga. <a class="src" href="#s7">[7]</a></label></li>
-      <li><input type="checkbox" id="2-12"><label for="2-12">Checklist de QA: Events Manager, diagnóstico de conversões otimizadas, comparação com o pedido real no back-end.</label></li>
-    </ul>
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · implementar e conferir</span>
+    <ol>
+      <li>Escolha a configuração (redundante ou dividida) e escreva por quê.</li>
+      <li>Implemente a CAPI pela integração nativa da plataforma da loja, por um parceiro ou pelo GTM server-side (unidade 13).</li>
+      <li>Use o código de evento de teste no Gerenciador de Eventos para ver os eventos do servidor chegando.</li>
+      <li>Faça uma compra de teste e confirme que aparece uma só vez (desduplicada).</li>
+      <li>Anote a EMQ do evento de compra e liste quais parâmetros de cliente ainda faltam.</li>
+      <li>No Google Ads, ative as conversões otimizadas e verifique o diagnóstico depois de alguns dias.</li>
+    </ol>
+  </div>
+  <button class="btn mark" type="button" data-unit="u10">Marcar unidade como estudada</button>
+</section>
+
+<section class="unit" id="u11" data-unit="u11">
+  <span class="lvtag l2">Nível 2 · Intermediário</span>
+  <div class="unit-head"><span class="num">11</span><h2>TikTok Ads</h2></div>
+  <p class="goal">Ao final, você escolhe o objetivo certo no TikTok e entende por que o criativo precisa parecer conteúdo da plataforma.</p>
+
+  <h3>Teoria</h3>
+  <p>No TikTok Ads Manager, os objetivos ficam em três categorias <a class="src" href="#ref-31">[31]</a>:</p>
+  <div class="tbl"><table>
+    <tr><th>Categoria</th><th>Para quê</th></tr>
+    <tr><td><b>Awareness</b> (reconhecimento)</td><td>Fazer a marca ser vista e lembrada.</td></tr>
+    <tr><td><b>Consideration</b> (consideração)</td><td>Levar as pessoas a pensar no negócio e buscar mais informação.</td></tr>
+    <tr><td><b>Conversion</b> (conversão)</td><td>Levar a uma ação, como comprar ou instalar um app; inclui promoção de app e geração de leads.</td></tr>
+  </table></div>
+  <p>O TikTok mantém a TikTok Academy como plataforma oficial de aprendizado e oferece a certificação de compra de mídia (Media Buying) <a class="src" href="#ref-32">[32]</a>.</p>
+  <div class="block tip"><span class="k">Método</span><p>No TikTok, anúncio com cara de comercial de TV tende a ser pulado. Trabalhe com vídeo vertical, gancho nos primeiros segundos, pessoas falando direto para a câmera e linguagem da plataforma. Isso é prática de mercado, não regra oficial: teste na sua conta.</p></div>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · roteiro de 20 segundos (fictício)</span>
+    <pre>0–2s  Gancho: "Parei de gastar com 5 cremes. Uso só isso."
+2–12s Demonstração: 3 passos da rotina, close no produto
+12–17s Prova: avaliação real de cliente na tela
+17–20s Chamada: "Kit com frete grátis, link no perfil"</pre>
   </div>
 
-  <div class="card">
-    <h3><span class="num">M4</span>TikTok Ads</h3>
-    <ul>
-      <li><input type="checkbox" id="2-13"><label for="2-13">TikTok Academy: plataforma oficial de aprendizado para profissionais de marketing e agências. <a class="src" href="#s20">[20]</a></label></li>
-      <li><input type="checkbox" id="2-14"><label for="2-14">Criativo nativo do formato vertical, pixel/Events API e estrutura de campanhas.</label></li>
-    </ul>
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · primeiro teste no TikTok</span>
+    <ol>
+      <li>Crie a conta no TikTok Ads Manager com os dados da empresa e instale o pixel do TikTok (ou a integração da loja).</li>
+      <li>Grave 3 vídeos no celular seguindo a estrutura gancho → demonstração → prova → chamada.</li>
+      <li>Monte uma campanha da categoria Conversion com os 3 vídeos no mesmo grupo.</li>
+      <li>Depois de uma semana, compare a retenção dos primeiros segundos entre os vídeos e regrave o gancho do pior.</li>
+    </ol>
+  </div>
+  <button class="btn mark" type="button" data-unit="u11">Marcar unidade como estudada</button>
+</section>
+
+<section class="unit" id="u12" data-unit="u12">
+  <span class="lvtag l2">Nível 2 · Intermediário</span>
+  <div class="unit-head"><span class="num">12</span><h2>Testes, leitura de dados e relatórios</h2></div>
+  <p class="goal">Ao final, você testa hipóteses sem tirar conclusões cedo demais e entrega relatórios que levam a decisões.</p>
+
+  <h3>Teoria</h3>
+  <h4>Hipótese antes do teste</h4>
+  <p>Um teste bom muda <b>uma variável</b> e tem uma hipótese escrita: "Se eu trocar a imagem estática por um vídeo de depoimento, o CPA cai, porque o produto precisa de prova". Sem hipótese, você só acumula números.</p>
+  <h4>Volume antes da conclusão</h4>
+  <p>O próprio Google recomenda avaliar resultados de Smart Bidding em períodos longos que tenham pelo menos 30 conversões, como um mês ou mais, e 50 conversões no caso de ROAS desejado <a class="src" href="#ref-6">[6]</a>. Use a mesma lógica nos seus testes: poucos dias e poucas conversões geram falsos vencedores.</p>
+  <h4>O relatório que serve</h4>
+  <div class="tbl"><table>
+    <tr><th>Seção</th><th>Conteúdo</th></tr>
+    <tr><td>1. Resultado de negócio</td><td>Vendas/leads reais, receita, CPA e ROAS frente à meta (unidade 02). Fonte: sistema do cliente.</td></tr>
+    <tr><td>2. O que aconteceu</td><td>Principais variações e o motivo provável.</td></tr>
+    <tr><td>3. Testes</td><td>Hipótese, resultado, decisão.</td></tr>
+    <tr><td>4. Próximos passos</td><td>Até 3 ações, com responsável e prazo.</td></tr>
+    <tr><td>Anexo</td><td>Métricas por plataforma, com a janela de atribuição informada.</td></tr>
+  </table></div>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · o falso vencedor (fictício)</span>
+    <p>Depois de 3 dias, o criativo A tem 6 vendas e o B tem 2. Parece que A é três vezes melhor. Depois de 3 semanas, A tem 31 e B tem 34. Com poucas conversões, a diferença inicial era acaso. Decisão correta: esperar volume antes de pausar.</p>
   </div>
 
-  <div class="card">
-    <h3><span class="num">M5</span>Testes e relatórios</h3>
-    <ul>
-      <li><input type="checkbox" id="2-15"><label for="2-15">Hipótese → teste A/B → decisão: tamanho mínimo de amostra e por que não decidir no 3º dia.</label></li>
-      <li><input type="checkbox" id="2-16"><label for="2-16">Dashboard do cliente unindo custos das plataformas e receita real (CRM/loja), não só o ROAS que a plataforma reporta.</label></li>
-    </ul>
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · teste e relatório</span>
+    <ol>
+      <li>Escreva uma hipótese para o negócio do briefing, no formato "Se… então… porque…".</li>
+      <li>Defina antes: métrica principal, duração mínima e volume mínimo de conversões para decidir.</li>
+      <li>Monte o modelo de relatório mensal com as 4 seções acima.</li>
+      <li>Preencha com dados reais (ou do exemplo da unidade 02) e escreva os 3 próximos passos.</li>
+    </ol>
   </div>
-
-  <div class="card">
-    <h3><span class="num">🎓</span>Certificações do nível</h3>
-    <ul>
-      <li><input type="checkbox" id="2-17"><label for="2-17"><b>Meta Certified Media Buying Professional</b>: exames professional custam até o equivalente a US$ 150 (o valor varia por país) <a class="src" href="#s17">[17]</a>; renovação anual. <a class="src" href="#s18">[18]</a></label></li>
-      <li><input type="checkbox" id="2-18"><label for="2-18"><b>Google Ads</b>: Display, Video, Shopping e Apps, que também contam para o selo Google Partner da agência. <a class="src" href="#s11">[11]</a></label></li>
-      <li><input type="checkbox" id="2-19"><label for="2-19"><b>TikTok Media Buying Certification</b>: prova online supervisionada de 2 horas, pensada para quem tem pelo menos 1 ano de experiência na plataforma; renova com teste de 20 questões. <a class="src" href="#s20">[20]</a></label></li>
-    </ul>
-    <p class="note">As provas da Meta são aplicadas pela Pearson VUE. <a class="src" href="#s19">[19]</a></p>
-  </div>
-
-  <div class="card proj">
-    <h3><span class="num">PROJETO 2</span>E-commerce rastreado de ponta a ponta</h3>
-    <p><span class="tag">Entrega</span>Loja (ex.: WooCommerce) com pixel + CAPI desduplicados, conversões otimizadas no Google, uma campanha Advantage+ de vendas, uma PMax com feed e análise mensal por canal. Critério de aprovação: a diferença entre as vendas reportadas e as vendas reais do back-end é documentada e explicada.</p>
-  </div>
+  <button class="btn mark" type="button" data-unit="u12">Marcar unidade como estudada</button>
 </section>
 
 <!-- ===================== NÍVEL 3 ===================== -->
-<section class="view" id="v-nivel-3" data-level="3">
-  <div class="levelhead">
-    <div><h2>Nível 3 · Avançado</h2><div class="meta">Objetivo: arquitetura de dados própria, mensuração causal e gestão de carteira de clientes.</div></div>
-    <div class="progress"><span class="pct">0%</span><div class="bar"><i style="background:var(--n3)"></i></div></div>
+<section class="unit" id="u13" data-unit="u13">
+  <span class="lvtag l3">Nível 3 · Avançado</span>
+  <div class="unit-head"><span class="num">13</span><h2>Server-side tagging e dados próprios</h2></div>
+  <p class="goal">Ao final, você entende a arquitetura de tags no servidor e sabe quando ela vale o custo.</p>
+
+  <h3>Teoria</h3>
+  <p>No server-side tagging, um contêiner do Google Tag Manager roda num servidor seu, entre o site e os fornecedores (Google, Meta etc.). O site envia os dados para o seu servidor, e ele distribui para cada destino. O Google documenta a hospedagem no Google Cloud com provisionamento automático ou em outra plataforma, e lista como benefícios desempenho da página, mais controle de privacidade e qualidade de dados <a class="src" href="#ref-19">[19]</a>. A Meta tem uma tag oficial de Conversions API para o GTM server-side <a class="src" href="#ref-43">[43]</a>.</p>
+  <div class="tbl"><table>
+    <tr><th>Vale a pena quando…</th><th>Talvez não valha quando…</th></tr>
+    <tr><td>Há volume de mídia relevante e muitas plataformas.</td><td>A loja já tem integração nativa de CAPI e conversões otimizadas funcionando bem.</td></tr>
+    <tr><td>O site tem muitas tags pesando no carregamento.</td><td>A verba de mídia é pequena perto do custo de servidor e manutenção.</td></tr>
+    <tr><td>Você precisa filtrar dados antes de enviar a terceiros.</td><td>Não há ninguém para manter o contêiner atualizado.</td></tr>
+  </table></div>
+  <div class="block warn"><span class="k">Server-side não dispensa consentimento</span><p>Ter um servidor no meio dá mais controle, mas a escolha do usuário no banner continua valendo (unidade 07).</p></div>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · fluxo (ilustrativo)</span>
+    <pre>Navegador ──► dados.loja.com.br (GTM server, domínio próprio)
+                 ├──► Google Analytics 4
+                 ├──► Google Ads (conversões)
+                 └──► Meta (Conversions API, com event_id do pedido)</pre>
   </div>
 
-  <div class="card">
-    <h3><span class="num">M1</span>Server-side tagging e dados primários</h3>
-    <ul>
-      <li><input type="checkbox" id="3-1"><label for="3-1">Contêiner de servidor do GTM: clientes, tags e o papel do servidor entre o site e os fornecedores. <a class="src" href="#s9">[9]</a></label></li>
-      <li><input type="checkbox" id="3-2"><label for="3-2">Hospedagem no Google Cloud (provisionamento automático) ou em outra plataforma; domínio próprio. <a class="src" href="#s9">[9]</a></label></li>
-      <li><input type="checkbox" id="3-3"><label for="3-3">Benefícios oficiais: desempenho da página, mais controle de privacidade e qualidade de dados. <a class="src" href="#s9">[9]</a></label></li>
-    </ul>
-    <p class="note">Server-side não dispensa consentimento: ele dá mais controle sobre os dados, mas a escolha do usuário continua valendo.</p>
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · laboratório</span>
+    <ol>
+      <li>Faça o curso oficial do Google sobre server-side tagging, indicado na documentação <a class="src" href="#ref-19">[19]</a>.</li>
+      <li>Crie um contêiner de servidor num projeto de teste (não no site do cliente) e aponte um subdomínio seu.</li>
+      <li>Envie o GA4 por ele e confira os eventos chegando.</li>
+      <li>Escreva uma estimativa de custo mensal de servidor para apresentar ao cliente antes de propor a mudança.</li>
+    </ol>
   </div>
-
-  <div class="card">
-    <h3><span class="num">M2</span>Conversões offline e leads qualificados</h3>
-    <ul>
-      <li><input type="checkbox" id="3-4"><label for="3-4">Conversões otimizadas para leads: capturar o lead no site e depois importar a venda fechada no CRM. <a class="src" href="#s7">[7]</a></label></li>
-      <li><input type="checkbox" id="3-5"><label for="3-5">Desde 15/06/2026, importações offline e de conversões otimizadas para leads usam a Data Manager API e estão bloqueadas na Google Ads API. <a class="src" href="#s7">[7]</a></label></li>
-      <li><input type="checkbox" id="3-6"><label for="3-6">Otimizar para valor (lead qualificado, venda), não para volume de formulários.</label></li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="num">M3</span>Mensuração causal: incrementalidade e MMM</h3>
-    <ul>
-      <li><input type="checkbox" id="3-7"><label for="3-7">Atribuição × incrementalidade: por que o ROAS da plataforma não prova causa.</label></li>
-      <li><input type="checkbox" id="3-8"><label for="3-8">Testes de geo-holdout e conversion lift.</label></li>
-      <li><input type="checkbox" id="3-9"><label for="3-9">Meridian: MMM open source do Google, com código e metodologia abertos, considera alcance e frequência e pode ser calibrado com experimentos. <a class="src" href="#s10">[10]</a></label></li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="num">M4</span>Automação e APIs (vantagem para quem programa)</h3>
-    <ul>
-      <li><input type="checkbox" id="3-10"><label for="3-10">Google Ads API v23+: relatórios por canal da PMax, inclusive por grupo de recursos (este nível só existe na API, não na interface). <a class="src" href="#s4">[4]</a></label></li>
-      <li><input type="checkbox" id="3-11"><label for="3-11">Meta Marketing API: acompanhar o changelog e as descontinuações de cada versão. <a class="src" href="#s13">[13]</a></label></li>
-      <li><input type="checkbox" id="3-12"><label for="3-12">Scripts de alertas (gasto anormal, queda de conversão) e relatórios automáticos para clientes.</label></li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="num">M5</span>Gestão de carteira e negócio</h3>
-    <ul>
-      <li><input type="checkbox" id="3-13"><label for="3-13">Alocação de verba entre canais com base em margem, incrementalidade e MMM.</label></li>
-      <li><input type="checkbox" id="3-14"><label for="3-14">Precificação do serviço (fee fixo, % da verba, híbrido), contrato, SLA e acesso às contas sempre em nome do cliente.</label></li>
-      <li><input type="checkbox" id="3-15"><label for="3-15">Rotina de atualização: changelogs oficiais todo mês (Google Ads Help, blog do Google Ads, Meta for Developers).</label></li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="num">🎓</span>Certificações do nível</h3>
-    <ul>
-      <li><input type="checkbox" id="3-16"><label for="3-16"><b>Meta Certified Marketing Science Professional</b>: dados, insights e mensuração para recomendações de marketing; renovação a cada 12 meses. <a class="src" href="#s25">[25]</a></label></li>
-      <li><input type="checkbox" id="3-17"><label for="3-17"><b>Meta Certified Media Measurement Specialist</b>: exige uma certificação de mídia ativa (Associate, Creative Strategy, Media Planning ou Media Buying). <a class="src" href="#s17">[17]</a></label></li>
-      <li><input type="checkbox" id="3-18"><label for="3-18">Curso oficial "Server-side tagging fundamentals" do Google. <a class="src" href="#s9">[9]</a></label></li>
-    </ul>
-  </div>
-
-  <div class="card proj">
-    <h3><span class="num">PROJETO 3</span>Stack de mensuração de agência</h3>
-    <p><span class="tag">Entrega</span>Para um cliente real: GTM server-side em domínio próprio, CAPI + conversões otimizadas para leads ligadas ao CRM, um teste de incrementalidade e um primeiro MMM com Meridian sobre 2 anos de dados. Apresentação final com recomendação de alocação de verba.</p>
-  </div>
+  <button class="btn mark" type="button" data-unit="u13">Marcar unidade como estudada</button>
 </section>
 
-<!-- ===================== FONTES ===================== -->
-<section class="view" id="v-fontes">
-  <h2 style="font-size:24px;margin-bottom:6px">Fontes</h2>
-  <p class="legend">Prioridade para fontes oficiais (Google, Meta, TikTok, ANPD, Planalto). Fontes secundárias aparecem só quando citam a plataforma diretamente e vêm marcadas. Todas conferidas em 23/11/2026; plataformas mudam rápido, então reconfira antes de usar em sala.</p>
-  <ol class="sources">
-    <li id="s1"><a href="https://blog.google/products/ads-commerce/google-ai-max-for-search-campaigns/">Unlock next-level performance with AI Max for Search campaigns</a><small>Google Ads Blog · 06/05/2025 · oficial</small></li>
-    <li id="s2"><a href="https://blog.google/products/ads-commerce/channel-performance-reporting-coming-to-performance-max/">Channel performance and more reporting coming to Performance Max</a><small>Google Ads Blog · 30/04/2025 · oficial</small></li>
-    <li id="s3"><a href="https://support.google.com/google-ads/answer/16710258">Access new inventory and channel performance reporting in Performance Max</a><small>Google Ads Help · 06/11/2025 · oficial</small></li>
-    <li id="s4"><a href="https://developers.google.com/ads/blog/posts/2026/01/introducing-channel-level-reporting-for">Introducing Channel-Level Reporting for Performance Max campaigns</a><small>Google Ads Developer Blog · 29/01/2026 · oficial</small></li>
-    <li id="s5"><a href="https://blog.google/products/ads-commerce/google-display-ads-demand-gen/">Google Display Ads is moving to Demand Gen</a><small>Google Ads Blog · 26/05/2026 · oficial</small></li>
-    <li id="s6"><a href="https://support.google.com/google-ads/answer/13695777">About Demand Gen campaigns</a><small>Google Ads Help · oficial</small></li>
-    <li id="s7"><a href="https://support.google.com/google-ads/answer/15713840">About enhanced conversions for leads</a><small>Google Ads Help · oficial</small></li>
-    <li id="s8"><a href="https://support.google.com/google-ads/answer/13695607">Updates to consent mode for traffic in the EEA</a><small>Google Ads Help · oficial</small></li>
-    <li id="s9"><a href="https://developers.google.com/tag-platform/tag-manager/server-side">Server-side tagging (documentação e curso)</a><small>Google Tag Platform · oficial</small></li>
-    <li id="s10"><a href="https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/">Meridian is now available to everyone</a><small>Google Ads Blog · 29/01/2025 · oficial</small></li>
-    <li id="s11"><a href="https://support.google.com/google-ads/answer/9702955">About Google Ads certifications</a><small>Google Ads / Partners Help · oficial</small></li>
-    <li id="s12"><a href="https://support.google.com/analytics/answer/15440208">[GA4] Analytics Academy</a><small>Google Analytics Help · oficial</small></li>
-    <li id="s13"><a href="https://developers.facebook.com/documentation/ads-commerce/marketing-api/marketing-api-changelog/version25.0">Marketing API v25.0 changelog</a><small>Meta for Developers · 18/02/2026 · oficial</small></li>
-    <li id="s14"><a href="https://developers.facebook.com/documentation/ads-commerce/conversions-api/guides/end-to-end-implementation">Conversions API: End-to-End Implementation</a><small>Meta for Developers · atualizado em 30/06/2026 · oficial</small></li>
-    <li id="s15"><a href="https://engineering.fb.com/2024/12/02/production-engineering/meta-andromeda-advantage-automation-next-gen-personalized-ads-retrieval-engine/">Meta Andromeda: Supercharging Advantage+ automation</a><small>Engineering at Meta · 02/12/2024 · oficial</small></li>
-    <li id="s16"><a href="https://engineering.fb.com/2026/10/28/ml-applications/meta-andromeda-next-gen-ads-retrieval-gpu-co-design/">Meta Andromeda: next generation of ads retrieval</a><small>Engineering at Meta · 28/10/2026 · oficial</small></li>
-    <li id="s17"><a href="https://www.facebookblueprint.com/student/page/582898-become-a-meta-certified-media-measurement-specialist">Become a Meta Certified Media Measurement Specialist (inclui preços dos exames)</a><small>Meta Blueprint · oficial</small></li>
-    <li id="s18"><a href="https://www.credly.com/org/facebook-blueprint/badge/meta-certified-media-buying-professional">Meta Certified Media Buying Professional (badge)</a><small>Credly, emitido pela Meta · oficial</small></li>
-    <li id="s19"><a href="https://www.pearsonvue.com/us/en/meta.html">Meta Certification Testing</a><small>Pearson VUE · aplicador oficial</small></li>
-    <li id="s20"><a href="https://ads.tiktok.com/business/en/academy/tiktok-certification">Become a certified TikTok Media Buyer</a><small>TikTok Academy · oficial</small></li>
-    <li id="s21"><a href="https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/guia-orientativo-cookies-e-protecao-de-dados-pessoais.pdf">Guia orientativo: Cookies e proteção de dados pessoais</a><small>ANPD · out/2022 · oficial. Resumo: <a href="https://www.mattosfilho.com.br/unico/anpd-guia-cookies-protecao-dados/">Mattos Filho</a></small></li>
-    <li id="s22"><a href="https://www.socialmediatoday.com/news/meta-advantage-plus-ad-updates-february-2025/739472/">Meta Updates Advantage+ ad options</a><small>Social Media Today · fev/2025 · secundária, com citações diretas da Meta</small></li>
-    <li id="s23"><a href="https://www.socialsamosa.com/news-2/meta-integrates-advantage-automation-in-ad-setup-10813111">Meta integrates more Advantage+ automation into default ad setup</a><small>Social Samosa · secundária, baseada na Central de Ajuda da Meta</small></li>
-    <li id="s24"><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">Lei nº 13.709/2018 (LGPD)</a><small>Planalto · texto legal oficial</small></li>
-    <li id="s25"><a href="https://www.credly.com/org/facebook-blueprint/badge/meta-certified-marketing-science-professional">Meta Certified Marketing Science Professional (badge)</a><small>Credly, emitido pela Meta · oficial</small></li>
+<section class="unit" id="u14" data-unit="u14">
+  <span class="lvtag l3">Nível 3 · Avançado</span>
+  <div class="unit-head"><span class="num">14</span><h2>Incrementalidade e Marketing Mix Model</h2></div>
+  <p class="goal">Ao final, você distingue "a plataforma atribuiu" de "o anúncio causou" e conhece as ferramentas para medir a segunda coisa.</p>
+
+  <h3>Teoria</h3>
+  <p><b>Atribuição</b> distribui o crédito de uma venda entre os pontos de contato. <b>Incrementalidade</b> pergunta: essa venda aconteceria sem o anúncio? Uma campanha de remarketing pode ter ROAS altíssimo atribuído e baixa incrementalidade, porque fala com quem já ia comprar.</p>
+  <h4>Formas de medir</h4>
+  <ul>
+    <li><b>Teste de holdout geográfico:</b> anunciar em algumas regiões e não em outras parecidas, comparando as vendas.</li>
+    <li><b>Estudos de lift das plataformas:</b> grupo que vê o anúncio × grupo de controle que não vê.</li>
+    <li><b>Marketing Mix Model (MMM):</b> modelo estatístico que estima o efeito de cada canal a partir do histórico agregado de investimento e vendas.</li>
+  </ul>
+  <p>Em janeiro de 2025, o Google abriu a todos o <b>Meridian</b>, um MMM de código aberto <a class="src" href="#ref-20">[20]</a>.</p>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · remarketing (fictício)</span>
+    <p>A campanha de remarketing mostra ROAS 9. O gestor pausa o remarketing em 3 estados por 4 semanas e mantém nos outros. As vendas totais dos estados sem remarketing caem só 3% em relação ao esperado. Conclusão: a maior parte das vendas atribuídas aconteceria de qualquer forma. A verba pode render mais em prospecção.</p>
+  </div>
+
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Faça agora · desenho de teste</span>
+    <ol>
+      <li>Escolha uma campanha que você suspeita ter baixa incrementalidade (remarketing ou campanha de marca).</li>
+      <li>Escreva um plano de holdout: regiões de teste e de controle, duração, métrica (vendas totais no sistema do cliente) e critério de decisão.</li>
+      <li>Junte 2 anos de dados semanais de investimento por canal e de vendas para preparar um primeiro MMM.</li>
+      <li>Leia a documentação do Meridian e liste os dados que faltam.</li>
+    </ol>
+  </div>
+  <button class="btn mark" type="button" data-unit="u14">Marcar unidade como estudada</button>
+</section>
+
+<section class="unit" id="u15" data-unit="u15">
+  <span class="lvtag l3">Nível 3 · Avançado</span>
+  <div class="unit-head"><span class="num">15</span><h2>Operação profissional: rotina, carteira e certificações</h2></div>
+  <p class="goal">Ao final, você tem uma rotina semanal, regras de acesso e um plano de certificação para operar clientes reais.</p>
+
+  <h3>Teoria</h3>
+  <h4>Rotina de operação (método)</h4>
+  <div class="tbl"><table>
+    <tr><th>Frequência</th><th>O que fazer</th></tr>
+    <tr><td>Diária (10 min)</td><td>Gasto anormal, anúncios reprovados, eventos parando de chegar.</td></tr>
+    <tr><td>Semanal</td><td>Termos de pesquisa e negativas, desempenho de criativos, CPA/ROAS frente à meta.</td></tr>
+    <tr><td>Quinzenal</td><td>Troca de criativos, novos testes.</td></tr>
+    <tr><td>Mensal</td><td>Relatório (unidade 12), conferência com as vendas reais, plano do mês seguinte.</td></tr>
+    <tr><td>Mensal</td><td>Ler as novidades oficiais: Central de Ajuda do Google Ads, blog do Google Ads e changelog da Meta for Developers <a class="src" href="#ref-27">[27]</a>.</td></tr>
+  </table></div>
+  <h4>Regras de carteira</h4>
+  <ul>
+    <li>Contas de anúncio, pixels e perfis são do <b>cliente</b>; a agência entra como parceira.</li>
+    <li>Pagamento da mídia no cartão ou boleto do cliente sempre que possível.</li>
+    <li>Contrato com escopo, verba, prazo de teste, metas e o que acontece com os acessos no fim.</li>
+  </ul>
+  <h4>Certificações oficiais</h4>
+  <ul>
+    <li><b>Google Ads</b> (Pesquisa, Display, Vídeo, Shopping, Apps etc.): gratuitas, no Skillshop <a class="src" href="#ref-39">[39]</a>.</li>
+    <li><b>Google Analytics</b>: cursos e certificação na Analytics Academy, no Skillshop <a class="src" href="#ref-41">[41]</a>.</li>
+    <li><b>Meta</b>: provas pagas; exames associate custam até o equivalente a US$ 99 e professional até US$ 150, variando por país <a class="src" href="#ref-40">[40]</a>.</li>
+    <li><b>TikTok</b>: certificação de compra de mídia pela TikTok Academy <a class="src" href="#ref-32">[32]</a>.</li>
+  </ul>
+
+  <h3>Exemplo</h3>
+  <div class="block ex"><span class="k">Exemplo · plano de 30 dias com um cliente novo</span>
+    <ol>
+      <li><b>Semana 1:</b> briefing, viabilidade (CPA máximo), auditoria de mensuração e de privacidade.</li>
+      <li><b>Semana 2:</b> correção de tags, CAPI e conversões otimizadas; campanhas montadas.</li>
+      <li><b>Semana 3:</b> campanhas no ar; monitoramento diário sem grandes edições.</li>
+      <li><b>Semana 4:</b> primeira leitura, conferência com vendas reais, primeiro relatório e plano do mês 2.</li>
+    </ol>
+  </div>
+
+  <h3>Prática real</h3>
+  <div class="block pr"><span class="k">Projeto final do curso</span>
+    <ol>
+      <li>Escolha um negócio real e execute o plano de 30 dias acima.</li>
+      <li>Entregue: briefing, planilha de viabilidade, plano de mensuração, auditoria LGPD, campanhas Meta e Google, relatório do mês 1.</li>
+      <li>Faça a certificação Google Ads Search e a do Google Analytics (gratuitas).</li>
+      <li>Revise este curso em 3 meses: plataformas mudam, e a lista de referências tem as fontes para conferir.</li>
+    </ol>
+  </div>
+  <button class="btn mark" type="button" data-unit="u15">Marcar unidade como estudada</button>
+</section>
+
+<!-- ===================== GLOSSÁRIO ===================== -->
+<section class="unit" id="glossario">
+  <div class="unit-head"><span class="num">G</span><h2>Glossário</h2></div>
+  <p>Termos, siglas e expressões em inglês usados no curso, no sentido em que aparecem aqui. A unidade entre parênteses indica onde o termo é explicado.</p>
+  <div class="gtools">
+    <input type="search" id="gQuery" placeholder="Ex.: ROAS, CAPI, correspondência exata" autocomplete="off" aria-label="Buscar termo">
+    <div class="gtabs" role="group" aria-label="Filtrar glossário">
+      <button type="button" class="btn on" data-f="all">Todos</button>
+      <button type="button" class="btn" data-f="metrica">Métricas</button>
+      <button type="button" class="btn" data-f="plataforma">Plataformas</button>
+      <button type="button" class="btn" data-f="dados">Dados e mensuração</button>
+      <button type="button" class="btn" data-f="legal">Privacidade</button>
+    </div>
+    <span class="gcount" id="gCount"></span>
+  </div>
+  <dl class="gl" id="glossBody"></dl>
+  <p class="gcount" id="gEmpty" hidden>Nenhum termo encontrado. Tente outra grafia.</p>
+</section>
+
+<!-- ===================== SIMULADO ===================== -->
+<section class="unit" id="simulado">
+  <div class="unit-head"><span class="num">Q</span><h2>Simulado: <span id="qTotal"></span> questões</h2></div>
+  <p>Questões inéditas, baseadas no conteúdo das unidades e nas fontes oficiais. Responda, clique em <b>Corrigir</b> e leia o comentário de cada uma. Filtre por unidade para revisar uma parte específica. As respostas ficam salvas neste navegador.</p>
+  <div class="qtools">
+    <select id="qFilter" aria-label="Filtrar por unidade"><option value="all">Todas as unidades</option></select>
+    <button class="btn pri" id="checkBtn" type="button">Corrigir</button>
+    <button class="btn ghost" id="clearBtn" type="button">Limpar respostas</button>
+    <button class="btn ghost" id="missBtn" type="button" hidden>Mostrar só as erradas</button>
+    <span class="score" id="score"></span>
+  </div>
+  <div id="quiz"></div>
+</section>
+
+<!-- ===================== REFERÊNCIAS ===================== -->
+<section class="unit" id="referencias">
+  <div class="unit-head"><span class="num">R</span><h2>Referências</h2></div>
+  <p>Todas conferidas em 26/11/2026. Fontes oficiais primeiro; as secundárias estão marcadas e só foram usadas quando citam diretamente a plataforma ou quando a página oficial bloqueia leitura automatizada.</p>
+  <h4>Google</h4>
+  <ol class="refs">
+    <li id="ref-1"><a href="https://support.google.com/google-ads/answer/6167118">About Quality Score for Search campaigns</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-2"><a href="https://support.google.com/google-ads/answer/156066">About ad quality</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-3"><a href="https://support.google.com/google-ads/answer/1722122">About Ad Rank</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-4"><a href="https://support.google.com/google-ads/answer/7478529">About keyword matching options</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-5"><a href="https://support.google.com/google-ads/answer/7684791">About responsive search ads</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-6"><a href="https://support.google.com/google-ads/answer/7065882">About Smart Bidding</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-7"><a href="https://support.google.com/google-ads/answer/13389795">About the broad match keywords campaign setting</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-8"><a href="https://blog.google/products/ads-commerce/google-ai-max-for-search-campaigns/">AI Max for Search campaigns</a> <small>Google Ads Blog · 06/05/2025 · oficial</small></li>
+    <li id="ref-9"><a href="https://support.google.com/google-ads/answer/10724817">About Performance Max campaigns</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-10"><a href="https://support.google.com/google-ads/answer/14530785">About audience signals for Performance Max campaigns</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-11"><a href="https://support.google.com/google-ads/answer/16710258">Channel performance reporting in Performance Max</a> <small>Google Ads Help · 06/11/2025 · oficial</small></li>
+    <li id="ref-12"><a href="https://blog.google/products/ads-commerce/google-display-ads-demand-gen/">Google Display Ads is moving to Demand Gen</a> <small>Google Ads Blog · 26/05/2026 · oficial</small></li>
+    <li id="ref-13"><a href="https://support.google.com/google-ads/answer/13695777">About Demand Gen campaigns</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-14"><a href="https://support.google.com/google-ads/answer/15713840">About enhanced conversions for leads</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-15"><a href="https://support.google.com/analytics/answer/13965727">[GA4] Conversions vs. key events</a> <small>Google Analytics Help · oficial</small></li>
+    <li id="ref-16"><a href="https://support.google.com/google-ads/answer/10000067">About consent mode</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-17"><a href="https://developers.google.com/tag-platform/security/concepts/consent-mode">Consent mode overview</a> <small>Google Tag Platform · oficial</small></li>
+    <li id="ref-18"><a href="https://support.google.com/google-ads/answer/13695607">Updates to consent mode for traffic in the EEA</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-19"><a href="https://developers.google.com/tag-platform/tag-manager/server-side">Server-side tagging</a> <small>Google Tag Platform · oficial</small></li>
+    <li id="ref-20"><a href="https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/">Meridian is now available to everyone</a> <small>Google Ads Blog · 29/01/2025 · oficial</small></li>
+  </ol>
+  <h4>Meta</h4>
+  <ol class="refs" start="21">
+    <li id="ref-21"><a href="https://help.instagram.com/119516847899397">How Instagram ads use machine learning</a> <small>Instagram Help Center (Meta) · oficial</small></li>
+    <li id="ref-22"><a href="https://developers.facebook.com/docs/meta-pixel/reference">Meta Pixel: Standard Events reference</a> <small>Meta for Developers · oficial</small></li>
+    <li id="ref-23"><a href="https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events">Handling Duplicate Pixel and Conversions API Events</a> <small>Meta for Developers · oficial</small></li>
+    <li id="ref-24"><a href="https://developers.facebook.com/docs/marketing-api/conversions-api/guides/end-to-end-implementation">Conversions API End-to-End Implementation</a> <small>Meta for Developers · oficial</small></li>
+    <li id="ref-25"><a href="https://developers.facebook.com/docs/marketing-api/conversions-api/dataset-quality-api">Dataset Quality API (Event Match Quality)</a> <small>Meta for Developers · oficial</small></li>
+    <li id="ref-26"><a href="https://developers.facebook.com/blog/post/2025/10/16/ads-insights-api-metric-availability-updates/">Ads Insights API metric availability updates</a> <small>Meta for Developers Blog · 16/10/2025 · oficial</small></li>
+    <li id="ref-27"><a href="https://developers.facebook.com/documentation/ads-commerce/marketing-api/marketing-api-changelog/version25.0">Marketing API v25.0 changelog</a> <small>Meta for Developers · 18/02/2026 · oficial</small></li>
+    <li id="ref-28"><a href="https://engineering.fb.com/2024/12/02/production-engineering/meta-andromeda-advantage-automation-next-gen-personalized-ads-retrieval-engine/">Meta Andromeda: Supercharging Advantage+ automation</a> <small>Engineering at Meta · 02/12/2024 · oficial</small></li>
+    <li id="ref-29"><a href="https://engineering.fb.com/2026/10/28/ml-applications/meta-andromeda-next-gen-ads-retrieval-gpu-co-design/">Meta Andromeda: next generation of ads retrieval</a> <small>Engineering at Meta · 28/10/2026 · oficial</small></li>
+    <li id="ref-30"><a href="https://transparency.meta.com/researchtools/ad-library-tools">Meta Ad Library tools</a> <small>Meta Transparency Center · oficial</small></li>
+  </ol>
+  <h4>TikTok</h4>
+  <ol class="refs" start="31">
+    <li id="ref-31"><a href="https://ads.tiktok.com/help/article/choose-right-objective">How to choose the right objective in TikTok Ads Manager</a> <small>TikTok Business Help Center · abr/2025 · oficial</small></li>
+    <li id="ref-32"><a href="https://ads.tiktok.com/business/en/academy/tiktok-certification">TikTok Academy: certification</a> <small>TikTok · oficial</small></li>
+  </ol>
+  <h4>Brasil: legislação e regulação</h4>
+  <ol class="refs" start="33">
+    <li id="ref-33"><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">Lei nº 13.709/2018 (LGPD), texto compilado</a> <small>Planalto · oficial</small></li>
+    <li id="ref-34"><a href="https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/guia-orientativo-cookies-e-protecao-de-dados-pessoais.pdf">Guia orientativo: Cookies e proteção de dados pessoais</a> <small>ANPD · out/2022 · oficial. Resumo: <a href="https://lefosse.com/noticias/alerta/anpd-publica-guia-orientativo-sobre-o-uso-de-cookies/">Lefosse</a></small></li>
+  </ol>
+  <h4>Fontes secundárias (marcadas)</h4>
+  <ol class="refs" start="35">
+    <li id="ref-35"><a href="https://www.socialmediaexaminer.com/how-to-create-facebook-ad-campaigns-with-odax/">How to create Facebook ad campaigns with ODAX</a> <small>Social Media Examiner · secundária (os seis objetivos e o anúncio de dez/2021)</small></li>
+    <li id="ref-36"><a href="https://www.jonloomer.com/learning-phase/">Is the Learning Phase 10 or 50 Events?</a> <small>Jon Loomer · secundária. A página oficial da Meta sobre a fase de aprendizado bloqueia leitura automatizada; a referência de ~50 eventos em 7 dias é repetida por várias fontes que a citam.</small></li>
+    <li id="ref-37"><a href="https://www.jonloomer.com/advantage-audience-vs-original-audiences/">Advantage+ Audience vs. Original Audiences</a> <small>Jon Loomer · secundária (controles × sugestões)</small></li>
+    <li id="ref-38"><a href="https://www.socialmediatoday.com/news/meta-advantage-plus-ad-updates-february-2025/739472/">Meta updates Advantage+ ad options</a> <small>Social Media Today · fev/2025 · secundária, com citações da Meta</small></li>
+  </ol>
+  <h4>Certificações e documentação adicional</h4>
+  <ol class="refs" start="39">
+    <li id="ref-39"><a href="https://support.google.com/google-ads/answer/9702955">About Google Ads certifications</a> <small>Google Ads Help · oficial</small></li>
+    <li id="ref-40"><a href="https://www.facebookblueprint.com/student/page/582898-become-a-meta-certified-media-measurement-specialist">Meta Certification (preços dos exames)</a> <small>Meta Blueprint · oficial</small></li>
+    <li id="ref-41"><a href="https://support.google.com/analytics/answer/15440208">[GA4] Analytics Academy</a> <small>Google Analytics Help · oficial</small></li>
+    <li id="ref-42"><a href="https://developers.facebook.com/docs/marketing-api/conversions-api/best-practices">Conversions API: Best Practices</a> <small>Meta for Developers · oficial</small></li>
+    <li id="ref-43"><a href="https://developers.facebook.com/docs/marketing-api/conversions-api/guides/gtm-server-side">Conversions API for Server-Side Google Tag Manager</a> <small>Meta for Developers · oficial</small></li>
   </ol>
 </section>
 
+<!-- ===================== VERSÕES ===================== -->
+<section class="unit" id="versoes">
+  <div class="unit-head"><span class="num">V</span><h2>Histórico de versões</h2></div>
+  <div id="verList"></div>
+</section>
+
 <footer>
-  <button class="reset" id="reset">Zerar meu progresso</button>
   <p>Um projeto <a href="https://neexflow.com.br">NeexFlow</a>: automação inteligente, IA e software sob medida.</p>
-  <p>Conteúdo de plataformas conferido em 23/11/2026. Cargas horárias, ordem dos módulos e projetos são recomendação pedagógica do curso. Isto não é aconselhamento jurídico.</p>
+  <p>Conteúdo conferido em 26/11/2026. Exemplos numéricos são fictícios e servem para ensinar as contas. Este material não é aconselhamento jurídico nem financeiro. Nomes de produtos pertencem às respectivas empresas.</p>
 </footer>
+</main>
 </div>
 
 <script>
 (function(){
-  var KEY='roadmap-trafego-v1', store={};
-  try{store=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){store={}}
-  function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
+  "use strict";
+  var LS = {
+    get:function(k,d){try{var v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},
+    set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  };
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
 
-  var tabs=document.querySelectorAll('nav.tabs button');
-  function show(v){
-    if(!document.getElementById('v-'+v)) v='visao';
-    tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.v===v)});
-    document.querySelectorAll('section.view').forEach(function(s){s.classList.toggle('on',s.id==='v-'+v)});
+  /* ---------- versões ---------- */
+  var VERSIONS=[
+    {v:"1.0",date:"2026-11-26",title:"Primeira versão",items:[
+      "15 unidades em 3 níveis, cada uma com teoria, exemplo e prática real.",
+      "Fatos de plataforma conferidos nas fontes oficiais do Google, Meta, TikTok, Planalto e ANPD.",
+      "Inclui as mudanças de 2025–2026: AI Max, desempenho por canal na PMax, Display migrando para Demand Gen, Data Manager API, fim das janelas de 7 e 28 dias após visualização na Meta e nova geração do Andromeda.",
+      "Glossário com busca e filtros, simulado comentado com filtro por unidade e referências numeradas."]}
+  ];
+  var fmt=function(d){var p=d.split('-');return p[2]+'/'+p[1]+'/'+p[0]};
+  $('#verList').innerHTML=VERSIONS.map(function(x){return '<div class="ver"><b>Versão '+x.v+'</b> · '+fmt(x.date)+' · '+esc(x.title)+'<ul>'+x.items.map(function(i){return '<li>'+esc(i)+'</li>'}).join('')+'</ul></div>'}).join('');
+  var lastSeen=LS.get('nxt_ver',null), cur=VERSIONS[0];
+  if(lastSeen!==cur.v){ $('#newsVer').textContent=cur.v; $('#newsTxt').textContent=cur.items[0]; $('#news').hidden=false; }
+  $('#newsClose').addEventListener('click',function(){LS.set('nxt_ver',cur.v);$('#news').hidden=true});
+
+  /* ---------- tema ---------- */
+  var theme=LS.get('nxt_theme','dark');
+  function applyTheme(){document.documentElement.setAttribute('data-theme',theme);$('#themeBtn').textContent=theme==='dark'?'☀︎ Tema claro':'☾ Tema escuro'}
+  applyTheme();
+  $('#themeBtn').addEventListener('click',function(){theme=theme==='dark'?'light':'dark';LS.set('nxt_theme',theme);applyTheme()});
+
+  /* ---------- menu mobile ---------- */
+  var side=$('#side');
+  $('#menuBtn').addEventListener('click',function(){side.classList.toggle('open')});
+  $$('#toc a').forEach(function(a){a.addEventListener('click',function(){side.classList.remove('open')})});
+  document.addEventListener('click',function(e){ if(side.classList.contains('open') && !side.contains(e.target) && e.target.id!=='menuBtn') side.classList.remove('open'); });
+
+  /* ---------- progresso ---------- */
+  var UNITS=['u01','u02','u03','u04','u05','u06','u07','u08','u09','u10','u11','u12','u13','u14','u15'];
+  var NAMES={u01:'01 · O trabalho e o funil',u02:'02 · A matemática do tráfego',u03:'03 · Leilões',u04:'04 · Meta Ads: estrutura',u05:'05 · Google Ads: Pesquisa',u06:'06 · Mensuração básica',u07:'07 · LGPD e consentimento',u08:'08 · Meta: Advantage+ e criativo',u09:'09 · PMax e Demand Gen',u10:'10 · CAPI e conversões otimizadas',u11:'11 · TikTok Ads',u12:'12 · Testes e relatórios',u13:'13 · Server-side',u14:'14 · Incrementalidade e MMM',u15:'15 · Operação profissional'};
+  var done=LS.get('nxt_done',{});
+  function renderProg(){
+    var n=UNITS.filter(function(u){return done[u]}).length;
+    $('#progTxt').textContent=n+' de '+UNITS.length+' unidades estudadas';
+    $('#progBar').style.width=Math.round(n/UNITS.length*100)+'%';
+    $$('.mark').forEach(function(b){var u=b.dataset.unit;b.classList.toggle('done',!!done[u]);b.textContent=done[u]?'✓ Unidade estudada (clique para desmarcar)':'Marcar unidade como estudada'});
+    $$('#toc a[data-u]').forEach(function(a){a.classList.toggle('done',!!done[a.dataset.u])});
   }
-  tabs.forEach(function(b){b.addEventListener('click',function(){
-    show(b.dataset.v); if(location.hash!=='#'+b.dataset.v) location.hash=b.dataset.v; window.scrollTo(0,0);
-  })});
-  // Source links: jump to the sources tab and highlight
-  document.querySelectorAll('a.src').forEach(function(a){a.addEventListener('click',function(ev){
-    ev.preventDefault(); var id=(a.getAttribute('href')||'').slice(1);
-    show('fontes'); location.hash='fontes';
-    var el=document.getElementById(id);
-    if(el){document.querySelectorAll('ol.sources li').forEach(function(l){l.style.outline=''});
-      el.style.outline='2px solid var(--acc)';el.style.outlineOffset='4px';el.style.borderRadius='8px';
-      setTimeout(function(){el.scrollIntoView({block:'center',behavior:'smooth'})},30);}
-  })});
-  function route(){var h=location.hash.slice(1); show(h||'visao')}
-  window.addEventListener('hashchange',route); route();
+  $$('.mark').forEach(function(b){b.addEventListener('click',function(){var u=b.dataset.unit;done[u]=!done[u];LS.set('nxt_done',done);renderProg()})});
+  $('#resetProg').addEventListener('click',function(){done={};LS.set('nxt_done',done);renderProg()});
+  renderProg();
 
-  function update(){
-    document.querySelectorAll('section[data-level]').forEach(function(sec){
-      var boxes=sec.querySelectorAll('input[type=checkbox]'),done=0;
-      boxes.forEach(function(c){if(c.checked)done++});
-      var p=boxes.length?Math.round(done/boxes.length*100):0;
-      sec.querySelector('.pct').textContent=p+'% ('+done+'/'+boxes.length+')';
-      sec.querySelector('.bar i').style.width=p+'%';
+  /* ---------- sumário ativo ---------- */
+  var tocLinks=$$('#toc a');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id=e.target.id;tocLinks.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+id)})}})},{rootMargin:'-20% 0px -70% 0px'});
+    $$('section.unit, header.hero').forEach(function(s){io.observe(s)});
+  }
+
+  /* ---------- busca no curso ---------- */
+  var sections=$$('section.unit[data-unit]');
+  var idx=sections.map(function(s){return {id:s.id,text:s.textContent.toLowerCase()}});
+  var norm=function(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')};
+  idx.forEach(function(i){i.n=norm(i.text)});
+  $('#tocSearch').addEventListener('input',function(){
+    var q=norm(this.value.trim());
+    $$('#toc a').forEach(function(a){
+      var u=a.dataset.u; if(!u){a.classList.toggle('hide',q.length>1);return}
+      var hit=!q||idx.filter(function(i){return i.id===u})[0].n.indexOf(q)>-1;
+      a.classList.toggle('hide',!hit);
     });
+  });
+
+  /* ---------- fontes: destaque ao clicar ---------- */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a.src'); if(!a) return;
+    var el=document.getElementById(a.getAttribute('href').slice(1)); if(!el) return;
+    el.classList.add('flash'); setTimeout(function(){el.classList.remove('flash')},2200);
+  });
+
+  /* ---------- glossário ---------- */
+  var GLOSS=[
+    ["A/B, teste","dados","Comparação entre duas versões que diferem em uma só variável, com hipótese e volume mínimo definidos antes (12)."],
+    ["Ad Rank","plataforma","Valores que o Google calcula em cada leilão para decidir se o anúncio aparece e em que posição; considera lance, qualidade, limites mínimos, competição, contexto da busca e impacto dos recursos (03)."],
+    ["Advantage+","plataforma","Família de automações da Meta. Inclui o público Advantage+ e as campanhas Advantage+ de vendas, cadastros e apps (04, 08)."],
+    ["AI Max for Search","plataforma","Conjunto de recursos do Google Ads para campanhas de Pesquisa: correspondência de termos de pesquisa, personalização de texto e expansão de URL final (05)."],
+    ["Andromeda","plataforma","Sistema de recuperação de anúncios da Meta, que seleciona os candidatos que seguem para o leilão (03, 08)."],
+    ["Atribuição","dados","Regra que distribui o crédito de uma conversão entre os anúncios e canais que a pessoa viu ou clicou (06, 08, 14)."],
+    ["Awareness","plataforma","Reconhecimento. Objetivo ou categoria de objetivos voltada a ser visto e lembrado (01, 11)."],
+    ["Biblioteca de Anúncios","plataforma","Base pública e pesquisável da Meta com os anúncios ativos em suas tecnologias (01, 08)."],
+    ["Broad match","plataforma","Correspondência ampla. Alcança buscas relacionadas à palavra-chave; é o padrão no Google Ads (05)."],
+    ["CAPI (Conversions API)","dados","API da Meta para enviar eventos do servidor do anunciante, em vez de (ou além de) pelo navegador (10)."],
+    ["Consent Mode","legal","Recurso do Google que informa às tags o consentimento do usuário; tem implementação básica e avançada (07)."],
+    ["Consentimento","legal","Na LGPD, manifestação livre, informada e inequívoca do titular para uma finalidade determinada (art. 5º, XII) (07)."],
+    ["Controles de público","plataforma","Limites que a Meta respeita no público Advantage+: localização, idade mínima, idiomas e exclusões (04)."],
+    ["Conversão","dados","Ação de valor para o negócio. No Google, desde a mudança no GA4, o termo indica o que é usado em lances e relatórios do Google Ads (06)."],
+    ["CPA","metrica","Custo por aquisição: investimento ÷ conversões (02)."],
+    ["CPA máximo","metrica","Maior CPA que não dá prejuízo: ticket médio × margem bruta (02)."],
+    ["CPC","metrica","Custo por clique: investimento ÷ cliques (02)."],
+    ["CPM","metrica","Custo por mil impressões: investimento ÷ impressões × 1.000 (02)."],
+    ["Criativo","plataforma","A peça do anúncio: imagem, vídeo, carrossel, texto (08, 11)."],
+    ["CTR","metrica","Taxa de cliques: cliques ÷ impressões × 100 (02)."],
+    ["Dado pessoal","legal","Informação relacionada a pessoa natural identificada ou identificável (LGPD, art. 5º, I) (07)."],
+    ["Dado sensível","legal","Dado sobre origem racial ou étnica, religião, saúde, vida sexual, genética, biometria, entre outros (LGPD, art. 5º, II) (07)."],
+    ["Data Manager API","dados","API do Google para importação de conversões offline e conversões otimizadas para leads, desde 15/06/2026 (10)."],
+    ["Demand Gen","plataforma","Campanha do Google para gerar demanda com anúncios visuais no YouTube, Discover, Gmail, Maps e Display; vai absorver as campanhas de Display (09)."],
+    ["Desduplicação","dados","Processo que evita contar duas vezes o mesmo evento enviado pelo Pixel e pela CAPI; usa event_id e event_name iguais (10)."],
+    ["EEE (Espaço Econômico Europeu)","legal","Região para a qual o Google exige o Consent Mode v2 (07)."],
+    ["EMQ (Event Match Quality)","dados","Nota até 10 da Meta que indica o quanto os dados do cliente enviados ajudam a ligar o evento a uma conta (10)."],
+    ["Evento padrão","dados","Ação pré-definida pela Meta, como ViewContent, AddToCart, Lead e Purchase (06)."],
+    ["Evento-chave (key event)","dados","Evento do GA4 marcado como importante para o negócio; antes se chamava conversão (06)."],
+    ["event_id","dados","Identificador único do evento, usado para desduplicar Pixel e CAPI (10)."],
+    ["Exact match","plataforma","Correspondência exata. Buscas com o mesmo significado ou intenção da palavra-chave (05)."],
+    ["Fase de aprendizado","plataforma","Período em que a Meta ainda está aprendendo a entregar um conjunto de anúncios; referência de ~50 eventos de otimização em 7 dias (04)."],
+    ["Funil","dados","Jornada de descoberta, consideração, conversão e recompra (01)."],
+    ["GA4","dados","Google Analytics 4, ferramenta de análise baseada em eventos (06)."],
+    ["Grupo de recursos (asset group)","plataforma","Na PMax, conjunto de textos, imagens, logotipos e vídeos em torno de um tema (09)."],
+    ["GTM (Google Tag Manager)","dados","Gerenciador de tags do Google, no navegador (web) ou no servidor (server-side) (06, 13)."],
+    ["Holdout","dados","Grupo ou região que fica sem anúncio para medir o efeito incremental (14)."],
+    ["Incrementalidade","dados","Parte dos resultados que só aconteceu por causa do anúncio (14)."],
+    ["Índice de qualidade (Quality Score)","plataforma","Nota de 1 a 10 por palavra-chave no Google; ferramenta de diagnóstico, não entrada do leilão (03)."],
+    ["Lance","plataforma","Quanto o anunciante está disposto a pagar pelo resultado; é um dos fatores do leilão (03)."],
+    ["Legítimo interesse","legal","Hipótese de tratamento da LGPD (art. 7º, IX), válida se não prevalecerem os direitos do titular (07)."],
+    ["LGPD","legal","Lei Geral de Proteção de Dados Pessoais, Lei 13.709/2018 (07)."],
+    ["Margem bruta","metrica","Percentual do preço que sobra depois do custo do produto; base do CPA máximo (02)."],
+    ["Meridian","dados","Marketing Mix Model de código aberto do Google (14)."],
+    ["MMM (Marketing Mix Model)","dados","Modelo estatístico que estima o efeito de cada canal a partir de dados agregados (14)."],
+    ["Palavra-chave negativa","plataforma","Termo que impede o anúncio de aparecer em determinadas buscas (05)."],
+    ["Performance Max (PMax)","plataforma","Campanha do Google baseada em metas que acessa todo o inventário do Google Ads (09)."],
+    ["Phrase match","plataforma","Correspondência de frase. Buscas que incluem o significado da palavra-chave (05)."],
+    ["Pixel","dados","Código da Meta instalado no site para enviar eventos do navegador (06)."],
+    ["Recuperação (retrieval)","plataforma","Etapa anterior ao leilão que reduz milhões de anúncios a alguns milhares de candidatos (03)."],
+    ["ROAS","metrica","Retorno sobre o investimento em anúncios: receita ÷ investimento (02)."],
+    ["ROAS de equilíbrio","metrica","ROAS mínimo para não ter prejuízo: 1 ÷ margem bruta (02)."],
+    ["RSA (anúncio responsivo de pesquisa)","plataforma","Anúncio do Google com 3 a 15 títulos e 2 a 4 descrições, combinados automaticamente (05)."],
+    ["Server-side tagging","dados","Envio de dados por um servidor intermediário do anunciante, em vez de direto do navegador para cada fornecedor (13)."],
+    ["Sinais de público","plataforma","Sugestões de público na PMax para orientar a IA; não são limites (09)."],
+    ["Smart Bidding","plataforma","Estratégias de lance do Google que otimizam conversões ou valor em cada leilão: CPA desejado, ROAS desejado, Maximizar conversões e Maximizar valor (05)."],
+    ["Taxa de ação estimada","plataforma","Previsão da Meta da chance de a pessoa realizar a ação otimizada; fator do leilão (03)."],
+    ["Taxa de conversão","metrica","Conversões ÷ cliques × 100 (02)."],
+    ["Ticket médio","metrica","Receita ÷ número de pedidos (02)."],
+    ["Titular","legal","Pessoa natural a quem se referem os dados pessoais (07)."],
+    ["UTM","dados","Parâmetros no link (utm_source, utm_medium, utm_campaign, utm_content) que identificam a origem da visita (06)."],
+    ["Valor total","plataforma","Pontuação do leilão da Meta, calculada a partir do lance, da taxa de ação estimada e da qualidade do anúncio (03)."]
+  ];
+  var CAT={metrica:'Métrica',plataforma:'Plataforma',dados:'Dados',legal:'Privacidade'};
+  var gf='all';
+  function renderGloss(){
+    var q=norm($('#gQuery').value.trim());
+    var list=GLOSS.filter(function(g){return (gf==='all'||g[1]===gf)&&(!q||norm(g[0]+' '+g[2]).indexOf(q)>-1)});
+    $('#glossBody').innerHTML=list.map(function(g){return '<div><dt>'+esc(g[0])+'<small>'+CAT[g[1]]+'</small></dt><dd>'+esc(g[2])+'</dd></div>'}).join('');
+    $('#gCount').textContent=list.length+' de '+GLOSS.length+' termos';
+    $('#gEmpty').hidden=list.length>0;
   }
-  document.querySelectorAll('input[type=checkbox]').forEach(function(c){
-    c.checked=!!store[c.id];
-    c.addEventListener('change',function(){store[c.id]=c.checked;save();update()});
-  });
-  document.getElementById('reset').addEventListener('click',function(){
-    store={};save();document.querySelectorAll('input[type=checkbox]').forEach(function(c){c.checked=false});update();
-  });
-  update();
+  $('#gQuery').addEventListener('input',renderGloss);
+  $$('.gtabs button').forEach(function(b){b.addEventListener('click',function(){gf=b.dataset.f;$$('.gtabs button').forEach(function(x){x.classList.toggle('on',x===b)});renderGloss()})});
+  renderGloss();
+
+  /* ---------- simulado ---------- */
+  var QUIZ=[
+    {u:'u01',q:'Um cliente quer vender mais pelo site e pede uma campanha "barata". Qual é a escolha correta de objetivo na Meta?',o:['Tráfego, porque o clique é mais barato','Engajamento, para ganhar curtidas primeiro','Vendas, otimizando para o evento de compra','Reconhecimento, para alcançar mais gente'],a:2,w:'A plataforma entrega o que você otimiza. Para vendas no site, o objetivo é Vendas com o evento de compra medido corretamente.'},
+    {u:'u01',q:'No TikTok Ads Manager, os objetivos são organizados em:',o:['Duas categorias: orgânico e pago','Três categorias: Awareness, Consideration e Conversion','Seis objetivos sem categorias','Quatro categorias, incluindo Retenção'],a:1,w:'O TikTok agrupa os objetivos em Awareness, Consideration e Conversion [31].'},
+    {u:'u02',q:'Produto de R$ 200 com margem bruta de 25%. Qual o CPA máximo e o ROAS de equilíbrio?',o:['R$ 50 e 4,0','R$ 25 e 2,5','R$ 75 e 3,0','R$ 50 e 2,0'],a:0,w:'CPA máximo = 200 × 0,25 = R$ 50. ROAS de equilíbrio = 1 ÷ 0,25 = 4.'},
+    {u:'u02',q:'Investimento de R$ 2.000, 1.600 cliques e 32 vendas. Qual o CPA e a taxa de conversão?',o:['R$ 62,50 e 2%','R$ 1,25 e 2%','R$ 62,50 e 1,6%','R$ 50,00 e 2%'],a:0,w:'CPA = 2.000 ÷ 32 = R$ 62,50. Conversão = 32 ÷ 1.600 = 2%.'},
+    {u:'u02',q:'O CPC está estável e o CPA dobrou. Onde está o problema mais provável?',o:['No leilão','Na taxa de conversão (página, oferta, preço)','No CPM','No número de impressões'],a:1,w:'CPA = CPC ÷ taxa de conversão. Se o CPC não mudou, foi a conversão que caiu.'},
+    {u:'u03',q:'Sobre o Índice de qualidade do Google, é correto afirmar:',o:['É a principal entrada do leilão','É calculado a partir do seu lance','É uma ferramenta de diagnóstico, não uma entrada do leilão','Vai de 0 a 100'],a:2,w:'O Google afirma que o Índice de qualidade é diagnóstico e não entra no leilão; ele vai de 1 a 10 e não considera o lance [1][2].'},
+    {u:'u03',q:'Quais são os três componentes do Índice de qualidade?',o:['Lance, orçamento e CTR','CTR esperada, relevância do anúncio e experiência na página de destino','CPM, CPC e CPA','Taxa de conversão, ROAS e ticket médio'],a:1,w:'Os três componentes são CTR esperada, relevância do anúncio e experiência na página de destino [1].'},
+    {u:'u03',q:'No leilão da Meta, o valor total de um anúncio considera:',o:['Somente o lance','Lance e orçamento diário','Lance, taxa de ação estimada e qualidade do anúncio','Número de seguidores da página'],a:2,w:'A Meta calcula o valor total a partir de lance, taxa de ação estimada e qualidade; por isso o maior lance nem sempre vence [21].'},
+    {u:'u04',q:'No público Advantage+, qual destes é um controle (limite) e não uma sugestão?',o:['Faixa de interesse em "skincare"','Gênero feminino','Exclusão de clientes atuais','Público semelhante (lookalike)'],a:2,w:'Localização, idade mínima, idiomas e públicos excluídos são controles; interesses, gênero e lookalikes são sugestões [37].'},
+    {u:'u04',q:'Qual é a referência de volume para um conjunto de anúncios sair da fase de aprendizado na Meta?',o:['10 eventos em 30 dias','Aproximadamente 50 eventos de otimização em 7 dias','1.000 impressões','100 cliques por dia'],a:1,w:'A referência citada pela Meta é de cerca de 50 eventos de otimização em 7 dias [36].'},
+    {u:'u04',q:'Com R$ 100/dia e CPA esperado de R$ 80 na compra, qual decisão faz mais sentido?',o:['Dividir em 5 conjuntos de R$ 20','Concentrar a verba e considerar otimizar para um evento mais frequente','Aumentar o lance manual','Editar o conjunto todos os dias'],a:1,w:'R$ 700/semana compram ~9 vendas, longe de ~50 eventos. Concentrar a verba e usar um evento mais frequente ajuda o aprendizado.'},
+    {u:'u05',q:'Como se escreve uma palavra-chave de correspondência exata no Google Ads?',o:['"tênis de corrida"','+tênis +corrida','[tênis de corrida]','-tênis de corrida'],a:2,w:'Exata usa colchetes; frase usa aspas; ampla não usa símbolo; o sinal de menos indica negativa [4].'},
+    {u:'u05',q:'Qual tipo de correspondência é o padrão quando nenhum é especificado?',o:['Exata','Frase','Ampla','Negativa'],a:2,w:'A correspondência ampla é o padrão no Google Ads [4].'},
+    {u:'u05',q:'Quais são os limites de um anúncio responsivo de pesquisa?',o:['Até 5 títulos de 25 caracteres','3 a 15 títulos de até 30 caracteres e 2 a 4 descrições de até 90','10 títulos de 50 caracteres','Até 4 títulos e 15 descrições'],a:1,w:'RSA: 3 a 15 títulos (30 caracteres), 2 a 4 descrições (90 caracteres) e caminhos de 15 [5].'},
+    {u:'u05',q:'Qual estratégia de lance busca o máximo de receita mantendo um retorno mínimo definido?',o:['Maximizar cliques','CPA desejado','ROAS desejado','Parcela de impressões desejada'],a:2,w:'ROAS desejado busca o máximo de valor de conversão no retorno definido [6].'},
+    {u:'u05',q:'O que aconteceu com campanhas que usavam correspondência ampla no nível da campanha a partir de setembro de 2026?',o:['Foram pausadas','Passaram a ser atualizadas automaticamente para o AI Max','Viraram campanhas de Display','Perderam o Smart Bidding'],a:1,w:'O Google informa que essas campanhas passaram a ser atualizadas automaticamente para o AI Max [7].'},
+    {u:'u06',q:'No GA4, os antigos "conversões" passaram a se chamar:',o:['Metas','Eventos-chave (key events)','Transações','Objetivos'],a:1,w:'Os eventos importantes do GA4 agora são eventos-chave; "conversão" passou a designar o que é usado no Google Ads [15].'},
+    {u:'u06',q:'Qual evento padrão da Meta deve disparar na página de confirmação da compra?',o:['ViewContent','AddToCart','Lead','Purchase'],a:3,w:'Purchase indica compra concluída, na página de obrigado ou confirmação [22].'},
+    {u:'u06',q:'Os números da Meta, do GA4 e da loja não batem. Qual é a referência para o resultado financeiro?',o:['O Gerenciador de Anúncios','O GA4','O sistema da loja/CRM','A média dos três'],a:2,w:'Cada ferramenta usa atribuição diferente. A verdade financeira é o sistema do cliente; as plataformas servem para comparar e otimizar.'},
+    {u:'u07',q:'Segundo a LGPD, o consentimento é:',o:['Qualquer aceite tácito','Manifestação livre, informada e inequívoca para finalidade determinada','Obrigatório só para dados sensíveis','Irrevogável depois de dado'],a:1,w:'Art. 5º, XII. E o consentimento pode ser revogado a qualquer momento (art. 8º, §5º) [33].'},
+    {u:'u07',q:'O guia de cookies da ANPD (out/2022) é:',o:['Uma lei federal','Uma resolução com multas próprias','Um documento orientativo que interpreta a LGPD','Uma norma do Google'],a:2,w:'O guia é interpretativo, não norma regulamentadora [34].'},
+    {u:'u07',q:'Na implementação básica do Consent Mode:',o:['As tags carregam com padrão negado e modelam por anunciante','As tags ficam bloqueadas até a interação com o banner e usam modelo geral','Não há banner','Os dados vão para a Meta'],a:1,w:'Básico: tags bloqueadas até a interação, modelagem geral. Avançado: tags carregam com padrão negado e modelagem específica do anunciante [17].'},
+    {u:'u07',q:'A exigência do Google de Consent Mode v2 vale para:',o:['Todo tráfego do mundo','Tráfego do Espaço Econômico Europeu','Somente aplicativos','Somente o Brasil'],a:1,w:'A exigência é para o tráfego do EEE; no Brasil, a obrigação de base legal vem da LGPD [18][33].'},
+    {u:'u08',q:'O que mudou na atribuição da Meta em 12/01/2026?',o:['Acabou a janela de 7 dias após o clique','A API deixou de retornar as janelas de 7 e 28 dias após visualização','Passou a existir só atribuição de 28 dias','A atribuição foi desligada'],a:1,w:'Foram descontinuadas as janelas de 7 e 28 dias após visualização; clique de 1, 7 e 28 dias e visualização de 1 dia continuam [26].'},
+    {u:'u08',q:'Desde 19/05/2026, na Marketing API da Meta, campanhas legadas Advantage+ de compras:',o:['Podem ser criadas normalmente','Não podem mais ser criadas, duplicadas ou editadas','Viraram campanhas manuais automaticamente','Só funcionam no Instagram'],a:1,w:'O changelog da v25 bloqueia criação, duplicação e edição; a regra vale para todas as versões desde 19/05/2026 [27].'},
+    {u:'u08',q:'Qual é a função do Andromeda?',o:['Aprovar anúncios','Recuperar, entre milhões, os anúncios candidatos que seguem para o leilão','Cobrar o cartão','Gerar criativos'],a:1,w:'O Andromeda é o sistema de recuperação de anúncios da Meta [28][29].'},
+    {u:'u09',q:'A Performance Max acessa:',o:['Só a Rede de Pesquisa','Só o YouTube','Todo o inventário do Google Ads, como YouTube, Display, Pesquisa, Discover, Gmail e Maps','Só sites parceiros'],a:2,w:'A PMax acessa todo o inventário do Google Ads a partir de uma campanha [9].'},
+    {u:'u09',q:'Na PMax, os sinais de público são:',o:['Limites rígidos de entrega','Sugestões que orientam a IA','Obrigatórios por lei','Usados só para relatório'],a:1,w:'Sinais de público são sugestões que ajudam a IA a otimizar [10].'},
+    {u:'u09',q:'O que o Google anunciou em maio de 2026 sobre Display?',o:['Que Display seria encerrado sem substituto','Que Display passa para dentro do Demand Gen, com transição até 2027','Que Display vira Pesquisa','Que Display fica gratuito'],a:1,w:'O anúncio de 26/05/2026 prevê a transição para Demand Gen até 2027 [12].'},
+    {u:'u10',q:'Para desduplicar Pixel e CAPI, a Meta precisa que:',o:['Os eventos tenham o mesmo valor','O eventID do Pixel seja igual ao event_id da CAPI, e os nomes do evento sejam iguais','A CAPI envie primeiro','O pixel seja removido'],a:1,w:'A desduplicação usa ID e nome do evento coincidentes [23].'},
+    {u:'u10',q:'Na configuração dividida (split setup) da CAPI:',o:['Todos os eventos vão pelos dois canais','Eventos diferentes vão por canais diferentes, como PageView pelo Pixel e Purchase pela CAPI','Nada vai pelo servidor','Só leads são enviados'],a:1,w:'É o exemplo da própria documentação da Meta [24].'},
+    {u:'u10',q:'Desde 15/06/2026, a importação de conversões offline no Google usa:',o:['A Google Ads API','A Data Manager API','O GA4 apenas','Planilha manual obrigatória'],a:1,w:'Importações offline e conversões otimizadas para leads migraram para a Data Manager API [14].'},
+    {u:'u12',q:'Para avaliar resultados de Smart Bidding, o Google recomenda períodos com pelo menos:',o:['5 conversões','30 conversões (50 para ROAS desejado)','1 semana, independentemente de conversões','1.000 cliques'],a:1,w:'Períodos longos com pelo menos 30 conversões, ou 50 no caso de ROAS desejado [6].'},
+    {u:'u12',q:'Após 3 dias, o criativo A tem 6 vendas e o B tem 2. A melhor decisão é:',o:['Pausar o B imediatamente','Dobrar a verba do A','Esperar o volume mínimo definido antes de decidir','Apagar a campanha'],a:2,w:'Com poucas conversões, a diferença pode ser acaso. Decida só com o volume definido antes do teste.'},
+    {u:'u13',q:'O server-side tagging:',o:['Dispensa o consentimento do usuário','Coloca um servidor do anunciante entre o site e os fornecedores, com mais controle sobre os dados','Substitui o GA4','É obrigatório por lei'],a:1,w:'É uma arquitetura com servidor intermediário; o consentimento continua valendo [19].'},
+    {u:'u14',q:'Uma campanha de remarketing tem ROAS atribuído de 9. Isso prova que ela gera vendas novas?',o:['Sim, ROAS alto prova causa','Não; é preciso medir incrementalidade, por exemplo com holdout','Sim, se o CTR for alto','Não, remarketing nunca funciona'],a:1,w:'Atribuição não é causa. Testes de holdout ou lift medem o que o anúncio realmente acrescentou.'},
+    {u:'u14',q:'O Meridian, do Google, é:',o:['Uma campanha de vídeo','Um Marketing Mix Model de código aberto','Um pixel','Uma certificação'],a:1,w:'O Google abriu o Meridian a todos em janeiro de 2025 [20].'},
+    {u:'u15',q:'Quem deve ser dono das contas de anúncio e do pixel?',o:['A agência','O gestor de tráfego','O cliente, com a agência como parceira','A plataforma'],a:2,w:'Boa prática de carteira: ativos no nome do cliente, acesso da agência como parceira.'}
+  ];
+  var ans=LS.get('nxt_ans',{});
+  var qf='all', checked=false, onlyMiss=false;
+  var sel=$('#qFilter');
+  UNITS.forEach(function(u){ if(QUIZ.some(function(q){return q.u===u})){var o=document.createElement('option');o.value=u;o.textContent=NAMES[u];sel.appendChild(o)} });
+  $('#qTotal').textContent=QUIZ.length;
+  function renderQuiz(){
+    $('#quiz').innerHTML=QUIZ.map(function(q,i){
+      return '<div class="q" data-i="'+i+'" data-u="'+q.u+'"><div class="qh">Questão '+(i+1)+' · '+esc(NAMES[q.u])+'</div><p class="st">'+esc(q.q)+'</p>'+
+        q.o.map(function(o,j){return '<label><input type="radio" name="q'+i+'" value="'+j+'"'+(ans[i]===j?' checked':'')+'><span>'+String.fromCharCode(65+j)+') '+esc(o)+'</span></label>'}).join('')+
+        '<div class="why"><b>Resposta: '+String.fromCharCode(65+q.a)+'.</b> '+esc(q.w)+'</div></div>';
+    }).join('');
+    applyQuizView();
+  }
+  function applyQuizView(){
+    var right=0,total=0;
+    $$('#quiz .q').forEach(function(el){
+      var i=+el.dataset.i,q=QUIZ[i],show=(qf==='all'||q.u===qf);
+      el.classList.toggle('checked',checked);
+      $$('label',el).forEach(function(l,j){l.classList.toggle('right',checked&&j===q.a);l.classList.toggle('wrong',checked&&ans[i]===j&&j!==q.a)});
+      if(show){total++; if(ans[i]===q.a) right++;}
+      var miss=checked&&ans[i]!==q.a;
+      el.classList.toggle('hide',!show||(onlyMiss&&!miss));
+    });
+    $('#score').textContent=checked?('Acertos: '+right+' de '+total):'';
+    $('#missBtn').hidden=!checked;
+    $('#missBtn').textContent=onlyMiss?'Mostrar todas':'Mostrar só as erradas';
+  }
+  $('#quiz').addEventListener('change',function(e){if(e.target.name){ans[+e.target.name.slice(1)]=+e.target.value;LS.set('nxt_ans',ans);if(checked)applyQuizView()}});
+  $('#checkBtn').addEventListener('click',function(){checked=true;applyQuizView()});
+  $('#clearBtn').addEventListener('click',function(){ans={};LS.set('nxt_ans',ans);checked=false;onlyMiss=false;renderQuiz()});
+  $('#missBtn').addEventListener('click',function(){onlyMiss=!onlyMiss;applyQuizView()});
+  sel.addEventListener('change',function(){qf=sel.value;applyQuizView()});
+  renderQuiz();
 })();
 </script>
 </body>
